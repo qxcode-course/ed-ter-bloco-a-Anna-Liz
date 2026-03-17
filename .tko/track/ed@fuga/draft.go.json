@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_18-26-58",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar H, P, F, D int\n\tfmt.Scan(&H, &P, &F, &D)\n\n\tfor F != P {\n\t\tF += D\n\t\tif F > 15 {\n\t\t\tF = 0\n\t\t}\n\n\t\tif F < 0 {\n\t\t\tF = 15\n\t\t}\n\n\t\tif F == H {\n\t\t\tfmt.Println(\"S\")\n\t\t\treturn\n\t\t}\n\t}\n\n\tfmt.Println(\"N\")\n}\n",
+            "lines": "26"
+        }
+    ]
+}

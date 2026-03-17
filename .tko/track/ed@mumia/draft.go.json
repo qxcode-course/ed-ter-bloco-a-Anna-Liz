@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_17-54-38",
+            "content": "@@ -70,34 +70,8 @@\n  int\n-%0A%09var classificacao string\n %0A%0A%09f\n@@ -94,16 +94,36 @@\n idade)%0A%0A\n+%09fmt.Println(nome)%0A%0A\n %09switch \n@@ -144,32 +144,28 @@\n %3C 12:%0A%09%09\n-classificacao = \n+fmt.Println(\n %22crianca\n@@ -165,16 +165,17 @@\n crianca%22\n+)\n %0A%09case i\n@@ -206,31 +206,28 @@\n :%0A%09%09\n-classificacao = \n+fmt.Println(\n %22jovem%22\n+)\n %0A%09ca\n@@ -262,32 +262,28 @@\n :%0A%09%09\n-classificacao = \n+fmt.Println(\n %22adulto%22\n %0A%09ca\n@@ -278,16 +278,17 @@\n %22adulto%22\n+)\n %0A%09case i\n@@ -321,31 +321,28 @@\n :%0A%09%09\n-classificacao = \n+fmt.Println(\n %22idoso%22\n+)\n %0A%09de\n@@ -354,78 +354,31 @@\n :%0A%09%09\n-classificacao = %22mumia%22%0A%09%7D%0A%0A%09fmt.Println(nome + %22eh %22 + classificacao)\n+fmt.Println(%22mumia%22)%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-13_17-57-30",
+            "content": "@@ -417,17 +417,16 @@\n nome + %22\n- \n eh %22 + c\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-13_17-57-37",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar nome string\n\tvar idade int\n\tvar classificacao string\n\n\tfmt.Scan(&nome, &idade)\n\n\tswitch {\n\tcase idade < 12:\n\t\tclassificacao = \"crianca\"\n\tcase idade >= 12 && idade < 18:\n\t\tclassificacao = \"jovem\"\n\tcase idade >= 18 && idade < 65:\n\t\tclassificacao = \"adulto\"\n\tcase idade >= 65 && idade < 1000:\n\t\tclassificacao = \"idoso\"\n\tdefault:\n\t\tclassificacao = \"mumia\"\n\t}\n\n\tfmt.Println(nome + \" eh \" + classificacao)\n\n}\n",
+            "lines": "27"
+        }
+    ]
+}

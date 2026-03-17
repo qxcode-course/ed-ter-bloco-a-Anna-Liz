@@ -1,0 +1,79 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-12_17-06-31",
+            "content": "@@ -41,118 +41,28 @@\n     \n-var ladoA, ladoB, ladoC float;%0A    fmt.Scanln(&ladoA, &ladoB, &ladoC);%0A%0A    fmt.Println(ladoA + ladoB + ladoC);\n+fmt.Println(%22qxcode%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-12_17-32-17",
+            "content": "@@ -150,8 +150,9 @@\n adoC);%0A%7D\n+%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-03-12_21-50-23",
+            "content": "@@ -66,16 +66,17 @@\n oC float\n+;\n %0A    fmt\n@@ -106,16 +106,17 @@\n  &ladoC)\n+;\n %0A%0A    fm\n@@ -147,10 +147,11 @@\n + ladoC)\n+;\n %0A%7D\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-03-12_22-08-53",
+            "content": "@@ -70,10 +70,8 @@\n loat\n-32\n %0A   \n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-03-13_17-08-34",
+            "content": "@@ -10,36 +10,21 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-%09%22math%22%0A)%0A%0A\n func\n@@ -33,17 +33,20 @@\n ain() %7B%0A\n-%09\n+    \n var lado\n@@ -70,12 +70,15 @@\n loat\n-64%0A%09\n+32%0A    \n fmt.\n@@ -113,129 +113,44 @@\n C)%0A%0A\n-%09var p = (ladoA + ladoB + ladoC) / 2%0A%09var area = math.Sqrt(p * (p - ladoA) * (p - ladoB) * (p - ladoC))%0A%09fmt.Println(area\n+    fmt.Println(ladoA + ladoB + ladoC\n )%0A%7D\n-%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-03-13_17-08-59",
+            "content": "@@ -82,10 +82,10 @@\n loat\n-32\n+64\n %0A%09fm\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-03-13_17-09-42",
+            "content": "@@ -82,10 +82,10 @@\n loat\n-64\n+32\n %0A%09fm\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-03-13_17-10-02",
+            "content": "@@ -225,31 +225,8 @@\n oC))\n-%0A%0A%09fmt.Println(%22Hello%22)\n %0A%09fm\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-03-13_17-16-53",
+            "content": "@@ -169,16 +169,8 @@\n rea \n-float64 \n = ma\n@@ -223,16 +223,38 @@\n adoC))%0A%0A\n+%09fmt.Println(%22Hello%22)%0A\n %09fmt.Pri\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-13_17-17-37",
+            "content": "@@ -165,16 +165,24 @@\n ar area \n+float64 \n = math.S\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-13_17-21-26",
+            "content": "@@ -237,20 +237,11 @@\n rint\n-f(%22%25.2f/n%22, \n+ln(\n area\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-13_17-21-42",
+            "content": "@@ -240,16 +240,18 @@\n tf(%22%25.2f\n+/n\n %22, area)\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-13_17-21-56",
+            "content": "@@ -90,16 +90,18 @@\n fmt.Scan\n+ln\n (&ladoA,\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-13_17-24-28",
+            "content": "@@ -242,10 +242,8 @@\n %25.2f\n-%5Cn\n %22, a\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-13_17-26-57",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tvar ladoA, ladoB, ladoC float64\n\tfmt.Scan(&ladoA, &ladoB, &ladoC)\n\n\tvar p = (ladoA + ladoB + ladoC) / 2\n\tvar area = math.Sqrt(p * (p - ladoA) * (p - ladoB) * (p - ladoC))\n\n\tfmt.Printf(\"%.2f\\n\", area)\n}\n",
+            "lines": "16"
+        }
+    ]
+}
