@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-19_15-46-54",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,292 +37,39 @@\n ) %7B%0A\n-%09var n int%0A%09fmt.Scan(&n)%0A%09var descasados %5B%5Dint%0A%09var contagem int%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09var x int%0A%09%09fmt.Scan(&x)%0A%09%09descasados = append(descasados, x)%0A%0A%09%09for j := range descasados %7B%0A%09%09%09if descasados%5Bj%5D == -x %7B%0A%09%09%09%09descasados%5Bi%5D = 0%0A%09%09%09%09contagem++%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Print(contagem\n+    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-19_17-19-20",
+            "content": "@@ -314,10 +314,8 @@\n rint\n-ln\n (con\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-19_17-21-51",
+            "content": "@@ -276,30 +276,8 @@\n = 0%0A\n-%09%09%09%09descasados%5Bj%5D = 0%0A\n %09%09%09%09\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-19_17-22-44",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tvar descasados []int\n\tvar contagem int\n\n\tfor i := 0; i < n; i++ {\n\t\tvar x int\n\t\tfmt.Scan(&x)\n\t\tdescasados = append(descasados, x)\n\n\t\tfor j := range descasados {\n\t\t\tif descasados[j] == -x {\n\t\t\t\tdescasados[i] = 0\n\t\t\t\tdescasados[j] = 0\n\t\t\t\tcontagem++\n\t\t\t}\n\t\t}\n\t}\n\n\tfmt.Println(contagem)\n}\n",
+            "lines": "26"
+        }
+    ]
+}
