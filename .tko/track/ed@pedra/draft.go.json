@@ -2,8 +2,33 @@
     "patches": [
         {
             "label": "2026-03-13_18-50-02",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"qxcode\")\n}\n",
+            "content": "@@ -10,36 +10,21 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-%09%22math%22%0A)%0A%0A\n func\n@@ -37,399 +37,32 @@\n ) %7B%0A\n-%09var n int%0A%09fmt.Scan(&n)%0A%09var ganhador int%0A%09var aux int = 100%0A%0A%09for i := range n %7B%0A%09%09var A, B int%0A%09%09fmt.Scan(&A, &B)%0A%09%09var diferenca = A - B%0A%0A%09%09if A %3E 9 && B %3E 9 %7B%0A%09%09%09if diferenca %3C 0 %7B%0A%09%09%09%09math.Abs(float64(diferenca))%0A%09%09%09%7D%0A%0A%09%09%09if diferenca %3C aux %7B%0A%09%09%09%09aux = diferenca%0A%09%09%09%09ganhador = i%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09if ganhador == 0 %7B%0A%09%09fmt.Println(%22n%C3%A3o haver%C3%A1 ganhador%22)%0A%09%7D else %7B%0A%09%09fmt.Println(ganhador)%0A%09%7D\n+    fmt.Println(%22qxcode%22)\n %0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-03-19_15-14-44",
+            "content": "@@ -156,18 +156,16 @@\n fmt.Scan\n-ln\n (&A, &B)\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-19_15-22-04",
+            "content": "@@ -110,10 +110,11 @@\n t = \n--\n 1\n+00\n %0A%0A%09f\n@@ -291,17 +291,17 @@\n ferenca \n-%3E\n+%3C\n  aux %7B%0A%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-19_15-38-18",
+            "content": "@@ -23,16 +23,24 @@\n %0A%09%22fmt%22%0A\n+%09%22math%22%0A\n )%0A%0Afunc \n@@ -110,11 +110,10 @@\n t = \n+-\n 1\n-00\n %0A%0A%09f\n@@ -243,21 +243,25 @@\n %09%09%09%09\n-diferenca = -\n+math.Abs(float64(\n dife\n@@ -261,24 +261,26 @@\n 64(diferenca\n+))\n %0A%09%09%09%7D%0A%0A%09%09%09if\n@@ -290,17 +290,17 @@\n ferenca \n-%3C\n+%3E\n  aux %7B%0A%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-19_15-40-24",
+            "content": "@@ -374,11 +374,18 @@\n ln(%22\n-sem\n+n%C3%A3o haver%C3%A1\n  gan\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-19_15-40-46",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tvar ganhador int\n\tvar aux int = 100\n\n\tfor i := range n {\n\t\tvar A, B int\n\t\tfmt.Scanln(&A, &B)\n\t\tvar diferenca = A - B\n\n\t\tif A > 9 && B > 9 {\n\t\t\tif diferenca < 0 {\n\t\t\t\tdiferenca = -diferenca\n\t\t\t}\n\n\t\t\tif diferenca < aux {\n\t\t\t\taux = diferenca\n\t\t\t\tganhador = i\n\t\t\t}\n\t\t}\n\t}\n\n\tif ganhador == 0 {\n\t\tfmt.Println(\"sem ganhador\")\n\t} else {\n\t\tfmt.Println(ganhador)\n\t}\n}\n",
+            "lines": "35"
         }
     ]
 }

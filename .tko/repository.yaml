@@ -19,6 +19,7 @@ tasks:
   ed@pintando: '{self:1, rate:100, study:20}'
   ed@mumia: '{self:1, rate:100, study:30}'
   ed@fuga: '{self:1, rate:100, study:30, concept:1}'
+  ed@pedra: '{self:1, rate:100, study:40, concept:1}'
 flags:
   painel: 0
   quests: 0
@@ -27,4 +28,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@fuga
+selected: ed@pedra
