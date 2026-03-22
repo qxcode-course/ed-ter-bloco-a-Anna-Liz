@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-22_13-33-01",
+            "content": "@@ -259,47 +259,8 @@\n %09%7D%0A%0A\n-%09for j := 0; j %3C len(cobrinha); j++ %7B%0A%09\n %09fmt\n@@ -280,15 +280,9 @@\n inha\n-%5Bj%5D)%0A%09%7D\n+)\n %0A%0A%7D%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-22_13-34-04",
+            "content": "@@ -117,15 +117,13 @@\n nln(\n-&\n qtd, \n-&\n dire\n@@ -208,13 +208,11 @@\n nln(\n-&\n x, \n-&\n y)%0A%09\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-22_13-36-14",
+            "content": "@@ -110,16 +110,18 @@\n fmt.Scan\n+ln\n (&qtd, &\n@@ -203,16 +203,18 @@\n fmt.Scan\n+ln\n (&x, &y)\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-22_13-38-16",
+            "content": "@@ -263,31 +263,33 @@\n %09for\n- _,\n  j := \n-range \n+0; j %3C len(\n cobrinha\n  %7B%0A%09\n@@ -284,16 +284,22 @@\n cobrinha\n+); j++\n  %7B%0A%09%09fmt\n@@ -311,16 +311,19 @@\n tln(\n-j.x, j.y\n+cobrinha%5Bj%5D\n )%0A%09%7D\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-22_13-57-25",
+            "content": "@@ -259,191 +259,8 @@\n %09%7D%0A%0A\n-%09if direcao == 'L' %7B%0A%09%09cobrinha = cobrinha%5B:len(cobrinha)-1%5D%0A%09%09novoPar := Par%7B%0A%09%09%09x: cobrinha%5B0%5D.x - 1,%0A%09%09%09y: cobrinha%5B0%5D.y,%0A%09%09%7D%0A%09%09cobrinha = append(%5B%5DPar%7BnovoPar%7D, cobrinha...)%0A%0A%09%7D%0A%0A\n %09for\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-22_14-33-58",
+            "content": "@@ -276,16 +276,56 @@\n = 'L' %7B%0A\n+%09%09cobrinha = cobrinha%5B:len(cobrinha)-1%5D%0A\n %09%09novoPa\n@@ -437,47 +437,8 @@\n ..)%0A\n-%09%09cobrinha = cobrinha%5B:len(cobrinha)-1%5D\n %0A%09%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-22_14-40-04",
+            "content": "@@ -277,26 +277,8 @@\n  'L'\n- %7C%7C direcao == 'l'\n  %7B%0A%09\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-22_14-42-33",
+            "content": "@@ -95,18 +95,17 @@\n  dir\n-Str string\n+ecao rune\n %0A%09fm\n@@ -125,39 +125,12 @@\n &dir\n-Str)%0A%09direcao := rune(dirStr%5B0%5D\n+ecao\n )%0A%0A%09\n@@ -278,33 +278,27 @@\n 'L' \n-%7B%0A%09%09cabeca := cobrinha%5B0%5D\n+%7C%7C direcao == 'l' %7B\n %0A%09%09n\n@@ -319,21 +319,26 @@\n %0A%09%09%09x: c\n-abeca\n+obrinha%5B0%5D\n .x - 1,%0A\n@@ -348,13 +348,18 @@\n y: c\n-abeca\n+obrinha%5B0%5D\n .y,%0A\n@@ -512,10 +512,11 @@\n j.y)%0A%09%7D%0A\n+%0A\n %7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-22_14-48-57",
+            "content": "@@ -95,17 +95,18 @@\n  dir\n-ecao rune\n+Str string\n %0A%09fm\n@@ -122,20 +122,47 @@\n td, &dir\n-ecao\n+Str)%0A%09direcao := rune(dirStr%5B0%5D\n )%0A%0A%09var \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-22_14-50-08",
+            "content": "@@ -100,14 +100,12 @@\n cao \n-string\n+rune\n %0A%09fm\n@@ -274,14 +274,38 @@\n  == \n-%22L%22\n+'L'\n  %7B%0A\n+%09%09cabeca := cobrinha%5B0%5D%0A\n %09%09no\n@@ -325,26 +325,21 @@\n %0A%09%09%09x: c\n-obrinha%5B0%5D\n+abeca\n .x - 1,%0A\n@@ -345,26 +345,21 @@\n %0A%09%09%09y: c\n-obrinha%5B0%5D\n+abeca\n .y,%0A%09%09%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-22_14-50-51",
+            "content": "@@ -262,213 +262,29 @@\n %7D%0A%0A%09\n-var deslocX, deslocY int%0A%09switch direcao %7B%0A%09case %22L%22:%0A%09%09deslocX = -1%0A%09%09deslocY = 0%0A%09case %22R%22:%0A%09%09deslocX = 1%0A%09%09deslocY = 0%0A%09case %22U%22:%0A%09%09deslocX = 0%0A%09%09deslocY = 1%0A%09case %22D%22:%0A%09%09deslocX = 0%0A%09%09deslocY = -1%0A%09%7D%0A%0A\n+if direcao == %22L%22 %7B%0A%09\n %09nov\n@@ -296,16 +296,17 @@\n := Par%7B%0A\n+%09\n %09%09x: cob\n@@ -320,19 +320,14 @@\n %5D.x \n-+ deslocX\n+- 1\n ,%0A\n+%09\n %09%09y:\n@@ -344,23 +344,15 @@\n 0%5D.y\n- + deslocY\n ,%0A\n+%09\n %09%7D%0A\n+%09\n %09cob\n@@ -395,16 +395,17 @@\n nha...)%0A\n+%09\n %09cobrinh\n@@ -434,16 +434,19 @@\n inha)-1%5D\n+%0A%09%7D\n %0A%0A%09for _\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-22_14-58-24",
+            "content": "@@ -417,17 +417,16 @@\n slocY = \n--\n 1%0A%09case \n@@ -456,16 +456,17 @@\n slocY = \n+-\n 1%0A%09%7D%0A%0A%09n\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-22_14-58-47",
+            "content": "package main\n\nimport \"fmt\"\n\ntype Par struct {\n\tx int\n\ty int\n}\n\nfunc main() {\n\tvar qtd int\n\tvar direcao string\n\tfmt.Scan(&qtd, &direcao)\n\n\tvar cobrinha []Par\n\tfor i := 0; i < qtd; i++ {\n\t\tvar x, y int\n\t\tfmt.Scan(&x, &y)\n\t\tcobrinha = append(cobrinha, Par{x, y})\n\t}\n\n\tvar deslocX, deslocY int\n\tswitch direcao {\n\tcase \"L\":\n\t\tdeslocX = -1\n\t\tdeslocY = 0\n\tcase \"R\":\n\t\tdeslocX = 1\n\t\tdeslocY = 0\n\tcase \"U\":\n\t\tdeslocX = 0\n\t\tdeslocY = -1\n\tcase \"D\":\n\t\tdeslocX = 0\n\t\tdeslocY = 1\n\t}\n\n\tnovoPar := Par{\n\t\tx: cobrinha[0].x + deslocX,\n\t\ty: cobrinha[0].y + deslocY,\n\t}\n\tcobrinha = append([]Par{novoPar}, cobrinha...)\n\tcobrinha = cobrinha[:len(cobrinha)-1]\n\n\tfor _, j := range cobrinha {\n\t\tfmt.Println(j.x, j.y)\n\t}\n}\n",
+            "lines": "48"
+        }
+    ]
+}

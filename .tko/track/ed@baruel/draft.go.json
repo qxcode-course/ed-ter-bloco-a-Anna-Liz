@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-20_16-30-24",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,484 +37,39 @@\n ) %7B%0A\n-%09var total, baruel int%0A%09fmt.Scanln(&total, &baruel)%0A%09var figurinhas, faltando, repetidas %5B%5Dint%0A%0A%09for i := range baruel %7B%0A%09%09var x int%0A%09%09fmt.Scan(x)%0A%09%09figurinhas = append(figurinhas, x)%0A%0A%09%09for j := range figurinhas %7B%0A%09%09%09if figurinhas%5Bj%5D == figurinhas%5Bi%5D && j != 0 %7B%0A%09%09%09%09repetidas = append(repetidas, x)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09var aux int = 1%0A%09for h := 0; h %3C baruel; h++ %7B%0A%09%09if figurinhas%5Bh%5D != aux %7B%0A%09%09%09faltando = append(faltando, aux)%0A%09%09%09aux++%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Println(repetidas, faltando)%0A\n+    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-20_18-29-08",
+            "content": "@@ -179,17 +179,16 @@\n mt.Scan(\n-&\n x)%0A%09%09fig\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-20_18-31-40",
+            "content": "@@ -145,26 +145,20 @@\n  := \n-0; i %3C\n+range\n  baruel\n-; i++\n  %7B%0A%09\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-20_18-35-05",
+            "content": "@@ -302,17 +302,17 @@\n && j != \n-i\n+0\n  %7B%0A%09%09%09%09r\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-20_18-42-13",
+            "content": "@@ -226,20 +226,18 @@\n has, x)%0A\n-%09%7D%0A\n %0A\n+%09\n %09for j :\n@@ -242,29 +242,28 @@\n  := \n-1; j %3C baruel; j++\n+range figurinhas\n  %7B%0A\n+%09\n %09%09if\n@@ -295,15 +295,24 @@\n has%5B\n-j-1%5D\n+i%5D && j != i\n  %7B%0A\n+%09\n %09%09%09r\n@@ -344,22 +344,15 @@\n as, \n-figurinhas%5Bj%5D)\n+x)%0A%09%09%09%7D\n %0A%09%09%7D\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-20_18-50-23",
+            "content": "@@ -373,35 +373,39 @@\n  int\n+ = 1\n %0A%09for \n-i\n+h\n  := \n-1; i %3C= total; i\n+0; h %3C baruel; h\n ++ %7B\n@@ -413,24 +413,8 @@\n %09%09if\n- aux %3C baruel &&\n  fig\n@@ -425,37 +425,17 @@\n has%5B\n-aux%5D == i %7B%0A%09%09%09aux++%0A%09%09%7D else\n+h%5D != aux\n  %7B%0A%09\n@@ -468,273 +468,63 @@\n do, \n-i\n+aux\n )%0A%09%09\n-%7D%0A%09%7D%0A%0A%09if len(repetidas) == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09%09for v := range repetidas %7B%0A%09%09%09fmt.Print(v, %22 %22)%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D%0A%0A%09if len(faltando) == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09%09for v := range faltando %7B%0A%09%09%09fmt.Print(v, %22 %22)%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D\n+%09aux++%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Println(repetidas, faltando)\n %0A%0A%7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-20_19-10-13",
+            "content": "@@ -608,20 +608,9 @@\n int(\n-repetidas%5Bv%5D\n+v\n , %22 \n@@ -735,19 +735,9 @@\n int(\n-faltando%5Bv%5D\n+v\n , %22 \n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-03-20_19-15-53",
+            "content": "@@ -87,17 +87,16 @@\n baruel)%0A\n-%0A\n %09var fig\n@@ -102,16 +102,37 @@\n gurinhas\n+, faltando, repetidas\n  %5B%5Dint%0A%0A\n@@ -234,30 +234,8 @@\n %09%7D%0A%0A\n-%09var repetidas %5B%5Dint%0A%0A\n %09for\n@@ -366,33 +366,15 @@\n var \n-faltando %5B%5Dint%0A%09aux := 0%0A\n+aux int\n %0A%09fo\n@@ -559,35 +559,32 @@\n %0A%09%7D else %7B%0A%09%09for\n- _,\n  v := range repe\n@@ -596,33 +596,44 @@\n  %7B%0A%09%09%09fmt.Print(\n-v\n+repetidas%5Bv%5D\n , %22 %22)%0A%09%09%7D%0A%09%09fmt\n@@ -710,11 +710,8 @@\n %09for\n- _,\n  v :\n@@ -742,17 +742,27 @@\n t.Print(\n-v\n+faltando%5Bv%5D\n , %22 %22)%0A%09\n@@ -780,13 +780,14 @@\n intln()%0A\n-\n %09%7D%0A\n+%0A\n %7D%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-03-20_19-17-54",
+            "content": "@@ -80,22 +80,10 @@\n otal\n-)%0A%09fmt.Scanln(\n+, \n &bar\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-20_19-19-28",
+            "content": "@@ -429,32 +429,48 @@\n otal; i++ %7B%0A%09%09if\n+ aux %3C baruel &&\n  figurinhas%5Baux%5D\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-20_19-20-17",
+            "content": "@@ -575,32 +575,35 @@\n %0A%09%7D else %7B%0A%09%09for\n+ _,\n  v := range repe\n@@ -617,113 +617,26 @@\n %0A%09%09%09\n-if v == len(repetidas)-1 %7B%0A%09%09%09%09fmt.Print(repetidas%5Bv%5D)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Print(repetidas%5Bv%5D\n+fmt.Print(v\n , %22 %22)%0A\n-%09%09%09%7D%0A\n %09%09%7D%0A\n@@ -714,16 +714,19 @@\n  %7B%0A%09%09for\n+ _,\n  v := ra\n@@ -747,110 +747,26 @@\n %0A%09%09%09\n-if v == len(faltando)-1 %7B%0A%09%09%09%09fmt.Print(faltando%5Bv%5D)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Print(faltando%5Bv%5D\n+fmt.Print(v\n , %22 %22)%0A\n-%09%09%09%7D%0A\n %09%09%7D%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-20_19-30-13",
+            "content": "@@ -411,17 +411,17 @@\n for \n-h\n+i\n  := 1; \n-h\n+i\n  %3C= \n@@ -431,35 +431,18 @@\n al; \n-h\n+i\n ++ %7B%0A%09%09\n+i\n f\n-or aux %3C baruel &&\n  fig\n@@ -458,11 +458,12 @@\n ux%5D \n-%3C h\n+== i\n  %7B%0A%09\n@@ -477,52 +477,13 @@\n %0A%09%09%7D\n-%0A%0A%09%09if aux %3E= baruel %7C%7C figurinhas%5Baux%5D != h\n+ else\n  %7B%0A%09\n@@ -512,17 +512,17 @@\n ltando, \n-h\n+i\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-03-21_21-23-47",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar total, baruel int\n\tfmt.Scanln(&total)\n\tfmt.Scanln(&baruel)\n\n\tvar figurinhas []int\n\n\tfor i := 0; i < baruel; i++ {\n\t\tvar x int\n\t\tfmt.Scan(&x)\n\t\tfigurinhas = append(figurinhas, x)\n\t}\n\n\tvar repetidas []int\n\n\tfor j := 1; j < baruel; j++ {\n\t\tif figurinhas[j] == figurinhas[j-1] {\n\t\t\trepetidas = append(repetidas, figurinhas[j])\n\t\t}\n\t}\n\n\tvar faltando []int\n\taux := 0\n\n\tfor h := 1; h <= total; h++ {\n\t\tfor aux < baruel && figurinhas[aux] < h {\n\t\t\taux++\n\t\t}\n\n\t\tif aux >= baruel || figurinhas[aux] != h {\n\t\t\tfaltando = append(faltando, h)\n\t\t}\n\t}\n\n\tif len(repetidas) == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfor v := range repetidas {\n\t\t\tif v == len(repetidas)-1 {\n\t\t\t\tfmt.Print(repetidas[v])\n\t\t\t} else {\n\t\t\t\tfmt.Print(repetidas[v], \" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Println()\n\t}\n\n\tif len(faltando) == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfor v := range faltando {\n\t\t\tif v == len(faltando)-1 {\n\t\t\t\tfmt.Print(faltando[v])\n\t\t\t} else {\n\t\t\t\tfmt.Print(faltando[v], \" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Println()\n\t}\n}\n",
+            "lines": "64"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+2026-03-20 16:19:06, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-20 16:19:07, EXEC, v:1, k:ed@casais, mode:FREE
+2026-03-20 16:22:03, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-20 16:22:08, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-20 16:29:25, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-20 16:29:32, MOVE, v:1, k:ed@baruel, mode:DOWN
+2026-03-20 16:29:52, MOVE, v:1, k:ed@baruel, mode:PICK
+2026-03-20 16:30:24, EXEC, v:1, k:ed@baruel, mode:FREE, size:5
+2026-03-20 16:57:45, MOVE, v:1, k:ed@baruel, mode:BACK
+2026-03-20 16:58:10, MOVE, v:1, k:ed@baruel, mode:PICK
+2026-03-20 18:29:03, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0
+2026-03-20 18:29:08, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:32
+2026-03-20 18:31:40, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:32
+2026-03-20 18:35:05, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:32
+2026-03-20 18:38:31, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0
+2026-03-20 18:42:13, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:32
+2026-03-20 18:50:23, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:32
+2026-03-20 18:50:24, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0
+2026-03-20 19:10:13, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:49
+2026-03-20 19:14:43, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0
+2026-03-20 19:15:53, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:49
+2026-03-20 19:17:54, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:53
+2026-03-20 19:19:28, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:54
+2026-03-20 19:20:17, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:54
+2026-03-20 19:30:13, EXEC, v:1, k:ed@baruel, mode:FULL, rate:25, size:62
+2026-03-20 19:34:57, MOVE, v:1, k:ed@baruel, mode:BACK
