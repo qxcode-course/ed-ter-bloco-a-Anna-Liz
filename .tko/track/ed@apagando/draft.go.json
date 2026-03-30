@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-30_17-07-29",
+            "content": "@@ -56,17 +56,16 @@\n mt.Scan(\n-&\n n)%0A%0A%09fil\n@@ -126,9 +126,8 @@\n can(\n-&\n x)%0A%09\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-30_17-07-47",
+            "content": "@@ -94,26 +94,15 @@\n for \n-i := 0; i %3C n; i++\n+range n\n  %7B%0A%09\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-30_17-08-42",
+            "content": "@@ -66,22 +66,30 @@\n )%0A%0A%09\n-var \n fila \n+:= make(\n %5B%5Dint\n+, n)\n %0A%09fo\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-30_17-10-27",
+            "content": "@@ -45,16 +45,13 @@\n ar n\n-, m\n  int%0A\n+\n %09fmt\n@@ -86,15 +86,26 @@\n for \n-range n\n+i := 0; i %3C n; i++\n  %7B%0A%09\n@@ -168,96 +168,18 @@\n fmt.\n-Scan(&m)%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09var x int%0A%09%09fmt.Scan(&x)%0A%09%09fila = append(fila, x)%0A%09%7D\n+Print(fila)\n %0A%7D%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-30_17-12-34",
+            "content": "@@ -170,303 +170,86 @@\n m)%0A%09\n-desistentes := make(map%5Bint%5Dstruct%7B%7D)%0A%09for range m %7B%0A%09%09var x int%0A%09%09fmt.Scan(&x)%0A%09%09desistentes%5Bx%5D = struct%7B%7D%7B%7D%0A%09%7D%0A%0A%09var fila_final %5B%5Dint%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09_, existe := desistentes%5Bfila%5Bi%5D%5D%0A%09%09if existe == false %7B%0A%09%09%09fila_final = append(fila_final, fila%5Bi%5D\n+for i := 0; i %3C n; i++ %7B%0A%09%09var x int%0A%09%09fmt.Scan(&x)%0A%09%09fila = append(fila, x\n )%0A\n-%09\n %09%7D\n-%0A%0A%09%7D%0A%0A%09fmt.Print(fila_final)\n %0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-30_17-42-06",
+            "content": "@@ -444,49 +444,8 @@\n %09%7D%0A%0A\n-%09for j := 0; j %3C len(fila_final); j++ %7B%0A%09\n %09fmt\n@@ -465,19 +465,8 @@\n inal\n-%5Bj%5D, %22 %22)%0A%09%7D\n+)\n %0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-30_17-45-34",
+            "content": "@@ -495,10 +495,8 @@\n rint\n-ln\n (fil\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-30_17-45-46",
+            "content": "@@ -491,16 +491,18 @@\n mt.Print\n+ln\n (fila_fi\n@@ -511,20 +511,16 @@\n l%5Bj%5D\n-)%0A%09%7D%0A%09print()\n+, %22 %22)%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-30_17-47-17",
+            "content": "@@ -509,13 +509,8 @@\n l%5Bj%5D\n-, %22 %22\n )%0A%09%7D\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-30_17-47-30",
+            "content": "@@ -520,22 +520,14 @@\n %09%7D%0A%09\n-fmt.P\n+p\n rint(\n-'%5Cn'\n )%0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-30_17-48-08",
+            "content": "@@ -529,11 +529,13 @@\n rint\n-ln(\n+('%5Cn'\n )%0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-30_17-48-27",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, m int\n\tfmt.Scan(&n)\n\n\tvar fila []int\n\tfor range n {\n\t\tvar x int\n\t\tfmt.Scan(&x)\n\t\tfila = append(fila, x)\n\t}\n\n\tfmt.Scan(&m)\n\tdesistentes := make(map[int]struct{})\n\tfor range m {\n\t\tvar x int\n\t\tfmt.Scan(&x)\n\t\tdesistentes[x] = struct{}{}\n\t}\n\n\tvar fila_final []int\n\tfor i := 0; i < n; i++ {\n\t\t_, existe := desistentes[fila[i]]\n\t\tif existe == false {\n\t\t\tfila_final = append(fila_final, fila[i])\n\t\t}\n\n\t}\n\n\tfor j := 0; j < len(fila_final); j++ {\n\t\tfmt.Print(fila_final[j], \" \")\n\t}\n\tfmt.Println()\n}\n",
+            "lines": "37"
+        }
+    ]
+}

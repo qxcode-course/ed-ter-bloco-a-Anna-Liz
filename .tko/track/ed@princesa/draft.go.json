@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-29_18-53-18",
+            "content": "@@ -77,12 +77,15 @@\n rintln(n\n+, e\n )%0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-03-29_18-53-36",
+            "content": "@@ -72,17 +72,15 @@\n e)%0A%09\n-fmt.P\n+p\n rint\n+ln\n (n)%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-03-29_18-54-05",
+            "content": "@@ -79,15 +79,12 @@\n .Print(n\n-, e\n )%0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-03-29_18-54-12",
+            "content": "@@ -71,81 +71,8 @@\n &e)%0A\n-%0A%09var fila %5B%5Dint%0A%0A%09for i := 1; i %3C n; i++ %7B%0A%09%09fila = append(fila, i)%0A%09%7D%0A%0A\n %09fmt\n@@ -82,12 +82,12 @@\n int(\n-fila\n+n, e\n )%0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-03-29_19-24-56",
+            "content": "@@ -101,17 +101,16 @@\n = 1; i %3C\n-=\n  n; i++ \n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-29_19-25-51",
+            "content": "@@ -30,553 +30,138 @@\n unc \n-printFila(fila %5B%5Dint, pos int) %7B%0A%09fmt.Print(%22%5B %22)%0A%09for i := 0; i %3C len(fila); i++ %7B%0A%09%09if i == pos %7B%0A%09%09%09fmt.Printf(%22%25d%3E %22, fila%5Bi%5D)%0A%09%09%7D else %7B%0A%09%09%09fmt.Printf(%22%25d %22, fila%5Bi%5D)%0A%09%09%7D%0A%09%7D%0A%09fmt.Println(%22%5D%22)%0A%7D%0A%0Afunc main() %7B%0A%09var n, e int%0A%09fmt.Scan(&n, &e)%0A%0A%09var fila %5B%5Dint%0A%0A%09for i := 1; i %3C= n; i++ %7B%0A%09%09fila = append(fila, i)%0A%09%7D%0A%0A%09pos := e - 1%0A%09for len(fila) %3E 1 %7B%0A%09%09printFila(fila, pos)%0A%0A%09%09morte := (pos + 1) %25 len(fila)%0A%0A%09%09fila = append(fila%5B:morte%5D, fila%5Bmorte+1:%5D...)%0A%0A%09%09if morte %3C pos %7B%0A%09%09%09pos--%0A%09%09%7D%0A%0A%09%09pos = pos %25 len(fila)%0A%09%7D%0A%0A%09printFila(fila, pos)%0A\n+main() %7B%0A%09var n, e int%0A%09fmt.Scan(&n, &e)%0A%0A%09var fila %5B%5Dint%0A%0A%09for i := 1; i %3C= n; i++ %7B%0A%09%09fila = append(fila, i)%0A%09%7D%0A%0A%09fmt.Print(fila)\n %0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-29_21-05-03",
+            "content": "@@ -493,16 +493,49 @@\n .)%0A%0A\n+%09%09if morte %3C pos %7B%0A%09%09%09pos--%0A%09%09%7D%0A%0A\n %09%09pos = \n mort\n@@ -530,21 +530,19 @@\n %09%09pos = \n-morte\n+pos\n  %25 len(f\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-29_21-08-04",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc printFila(fila []int, pos int) {\n\tfmt.Print(\"[ \")\n\tfor i := 0; i < len(fila); i++ {\n\t\tif i == pos {\n\t\t\tfmt.Printf(\"%d> \", fila[i])\n\t\t} else {\n\t\t\tfmt.Printf(\"%d \", fila[i])\n\t\t}\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc main() {\n\tvar n, e int\n\tfmt.Scan(&n, &e)\n\n\tvar fila []int\n\n\tfor i := 1; i <= n; i++ {\n\t\tfila = append(fila, i)\n\t}\n\n\tpos := e - 1\n\tfor len(fila) > 1 {\n\t\tprintFila(fila, pos)\n\n\t\tmorte := (pos + 1) % len(fila)\n\n\t\tfila = append(fila[:morte], fila[morte+1:]...)\n\n\t\tpos = morte % len(fila)\n\t}\n\n\tprintFila(fila, pos)\n\n}\n",
+            "lines": "40"
+        }
+    ]
+}
