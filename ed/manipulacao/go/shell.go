@@ -85,13 +85,43 @@ func reverse(vet []int) []int {
 }
 
 func unique(vet []int) []int {
-	_ = vet
-	return nil
+	var nova_lista []int
+
+	for i := 0; i < len(vet); i++ {
+		var encontrado bool
+
+		for j := 0; j < len(nova_lista); j++ {
+			if vet[i] == nova_lista[j] {
+				encontrado = true
+				break
+			}
+		}
+
+		if encontrado == false {
+			nova_lista = append(nova_lista, vet[i])
+		}
+	}
+	return nova_lista
 }
 
 func repeated(vet []int) []int {
-	_ = vet
-	return nil
+	var nova_lista []int
+
+	for i := 0; i < len(vet); i++ {
+		var repetido bool
+
+		for j := 0; j < i; j++ {
+			if vet[i] == vet[j] {
+				repetido = true
+				break
+			}
+		}
+
+		if repetido == true {
+			nova_lista = append(nova_lista, vet[i])
+		}
+	}
+	return nova_lista
 }
 
 func main() {

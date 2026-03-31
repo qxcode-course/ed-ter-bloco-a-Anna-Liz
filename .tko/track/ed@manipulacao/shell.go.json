@@ -97,8 +97,123 @@
         },
         {
             "label": "2026-03-30_23-07-31",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc absolute(x int) int {\n\tif x < 0 {\n\t\treturn -x\n\t} else {\n\t\treturn x\n\t}\n}\n\n/*\n\tPesquisando descobri que fazendo com append n\u00e3o \u00e9 muito eficiente,\n\npois \u00e9 preciso realocar a mem\u00f3ria v\u00e1rias vezes para acrescentar os\noutros elementos.\n\nOutra forma mais eficiente poderia ser:\n  - criar um slice de lista_homens do tamanho do vetor inicial, afinal\n    sabemos que ela nao poder\u00e1 ser maior, e dessa forma garantimos que\n    haver\u00e1 realoca\u00e7\u00e3o\n    :D\n*/\nfunc getMen(vet []int) []int {\n\tvar lista_homens []int\n\tfor i := 0; i < len(vet); i++ {\n\t\tif vet[i] > 0 {\n\t\t\tlista_homens = append(lista_homens, vet[i])\n\t\t}\n\t}\n\treturn lista_homens\n}\n\n// Podemos fazer make([]int, 0, len(vet)) para criar um slice com 0 elementos\nfunc getCalmWomen(vet []int) []int {\n\tlista_mulheres := make([]int, 0, len(vet))\n\tfor i := 0; i < len(vet); i++ {\n\t\tif vet[i] < 0 && -(vet[i]) < 10 {\n\t\t\tlista_mulheres = append(lista_mulheres, vet[i])\n\t\t}\n\t}\n\treturn lista_mulheres\n}\n\nfunc sortVet(vet []int) []int {\n\tfor i := 0; i < len(vet); i++ {\n\t\tfor j := 0; j < len(vet)-1; j++ {\n\t\t\tif vet[j] > vet[j+1] {\n\t\t\t\tvet[j], vet[j+1] = vet[j+1], vet[j]\n\t\t\t}\n\t\t}\n\t}\n\n\treturn vet\n}\n\nfunc sortStress(vet []int) []int {\n\tfor i := 0; i < len(vet); i++ {\n\t\tfor j := 0; j < len(vet)-1; j++ {\n\t\t\tif absolute(vet[j]) > absolute(vet[j+1]) {\n\t\t\t\tvet[j], vet[j+1] = vet[j+1], vet[j]\n\t\t\t}\n\t\t}\n\t}\n\treturn vet\n}\n\nfunc reverse(vet []int) []int {\n\tlista := make([]int, len(vet))\n\tcopy(lista, vet)\n\n\tvar aux = len(lista) - 1\n\tfor i := 0; i < len(lista)/2; i++ {\n\t\tlista[i], lista[aux] = lista[aux], lista[i]\n\t\taux--\n\t}\n\treturn lista\n}\n\nfunc unique(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc repeated(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tfmt.Print(\"$\")\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"get_men\":\n\t\t\tprintVec(getMen(str2vet(args[1])))\n\t\tcase \"get_calm_women\":\n\t\t\tprintVec(getCalmWomen(str2vet(args[1])))\n\t\tcase \"sort\":\n\t\t\tprintVec(sortVet(str2vet(args[1])))\n\t\tcase \"sort_stress\":\n\t\t\tprintVec(sortStress(str2vet(args[1])))\n\t\tcase \"reverse\":\n\t\t\tarray := str2vet(args[1])\n\t\t\tother := reverse(array)\n\t\t\tprintVec(array)\n\t\t\tprintVec(other)\n\t\tcase \"unique\":\n\t\t\tprintVec(unique(str2vet(args[1])))\n\t\tcase \"repeated\":\n\t\t\tprintVec(repeated(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\t}\n\t}\n}\n\nfunc printVec(vet []int) {\n\tfmt.Print(\"[\")\n\tfor i, val := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(val)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc str2vet(s string) []int {\n\tif s == \"[]\" {\n\t\treturn nil\n\t}\n\ts = s[1 : len(s)-1]\n\tparts := strings.Split(s, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tn, _ := strconv.Atoi(part)\n\t\tvet = append(vet, n)\n\t}\n\treturn vet\n}\n",
+            "content": "@@ -1677,270 +1677,27 @@\n  %7B%0A%09\n-nova_lista := make(%5B%5Dint, 0, len(vet))%0A%09nova_lista = append(nova_lista, vet%5B0%5D)%0A%09for i := 1; i %3C len(vet)-1; i++ %7B%0A%09%09for j := 0; j %3C len(nova_lista); j++ %7B%0A%09%09%09if vet%5Bi%5D != nova_lista%5Bj%5D %7B%0A%09%09%09%09nova_lista = append(nova_lista, vet%5Bi%5D)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09return nova_lista\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
             "lines": "156"
+        },
+        {
+            "label": "2026-03-31_16-02-52",
+            "content": "@@ -1842,17 +1842,17 @@\n  vet%5Bi%5D \n-=\n+!\n = nova_l\n@@ -1866,25 +1866,8 @@\n  %7B%0A%09\n-%09%09%09continue%0A%09%09%09%7D%0A\n %09%09%09n\n@@ -1897,32 +1897,37 @@\n _lista, vet%5Bi%5D)%0A\n+%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%09return n\n",
+            "lines": "164"
+        },
+        {
+            "label": "2026-03-31_16-04-34",
+            "content": "@@ -1869,23 +1869,23 @@\n %09%09%09%09\n-break\n+continue\n %0A%09%09%09%7D%0A%09\n-%09%7D%0A\n %09%09no\n@@ -1922,16 +1922,20 @@\n vet%5Bi%5D)%0A\n+%09%09%7D%0A\n %09%7D%0A%09retu\n",
+            "lines": "165"
+        },
+        {
+            "label": "2026-03-31_16-07-47",
+            "content": "@@ -1755,33 +1755,33 @@\n t%5B0%5D)%0A%09for i := \n-0\n+1\n ; i %3C len(vet); \n@@ -1770,32 +1770,34 @@\n  1; i %3C len(vet)\n+-1\n ; i++ %7B%0A%09%09for j \n@@ -1869,23 +1869,23 @@\n %09%09%09%09\n-continue\n+break\n %0A%09%09%09%7D%0A%09\n+%09%7D%0A\n %09%09no\n@@ -1914,36 +1914,32 @@\n _lista, vet%5Bi%5D)%0A\n-%09%09%7D%0A\n %09%7D%0A%09return nova_\n",
+            "lines": "165"
+        },
+        {
+            "label": "2026-03-31_16-09-05",
+            "content": "@@ -1867,23 +1867,23 @@\n %09%09%09%09\n-break\n+continue\n %0A%09%09%09%7D%0A%09\n-%09%7D%0A\n %09%09no\n@@ -1920,16 +1920,20 @@\n vet%5Bi%5D)%0A\n+%09%09%7D%0A\n %09%7D%0A%09retu\n",
+            "lines": "165"
+        },
+        {
+            "label": "2026-03-31_16-09-28",
+            "content": "@@ -1875,16 +1875,19 @@\n k%0A%09%09%09%7D%0A%09\n+%09%7D%0A\n %09%09nova_l\n@@ -1912,36 +1912,32 @@\n _lista, vet%5Bi%5D)%0A\n-%09%09%7D%0A\n %09%7D%0A%09return nova_\n",
+            "lines": "165"
+        },
+        {
+            "label": "2026-03-31_16-09-58",
+            "content": "@@ -1840,17 +1840,17 @@\n  vet%5Bi%5D \n-!\n+=\n = nova_l\n@@ -1860,16 +1860,30 @@\n a%5Bj%5D %7B%0A%09\n+%09%09%09break%0A%09%09%09%7D%0A\n %09%09%09nova_\n@@ -1917,31 +1917,16 @@\n vet%5Bi%5D)%0A\n-%09%09%09%09break%0A%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%09\n",
+            "lines": "165"
+        },
+        {
+            "label": "2026-03-31_16-12-32",
+            "content": "@@ -1907,33 +1907,8 @@\n i%5D)%0A\n-%09%09%09%09continue%0A%09%09%09%7D else %7B%0A\n %09%09%09%09\n",
+            "lines": "165"
+        },
+        {
+            "label": "2026-03-31_16-14-19",
+            "content": "@@ -1753,17 +1753,16 @@\n vet%5B0%5D)%0A\n-%0A\n %09for i :\n@@ -1840,17 +1840,17 @@\n  vet%5Bi%5D \n-=\n+!\n = nova_l\n@@ -1863,73 +1863,8 @@\n %5D %7B%0A\n-%09%09%09%09break%0A%09%09%09%7D else %7B%0A%09%09%09%09if nova_lista%5Bj%5D == len(nova_lista) %7B%0A%09\n %09%09%09%09\n@@ -1907,17 +1907,46 @@\n i%5D)%0A%09%09%09%09\n-%7D\n+continue%0A%09%09%09%7D else %7B%0A%09%09%09%09break\n %0A%09%09%09%7D%0A%09%09\n",
+            "lines": "167"
+        },
+        {
+            "label": "2026-03-31_16-18-15",
+            "content": "@@ -1673,20 +1673,76 @@\n %5Dint %7B%0A%09\n-var \n+nova_lista := make(%5B%5Dint, 0, len(vet))%0A%09nova_lista = append(\n nova_lis\n@@ -1743,22 +1743,25 @@\n va_lista\n- %5B%5Dint\n+, vet%5B0%5D)\n %0A%0A%09for i\n@@ -1791,31 +1791,8 @@\n + %7B%0A\n-%09%09var encontrado bool%0A%0A\n %09%09fo\n@@ -1864,30 +1864,8 @@\n %5D %7B%0A\n-%09%09%09%09encontrado = true%0A\n %09%09%09%09\n@@ -1878,38 +1878,59 @@\n %09%09%09%7D\n-%0A\n+ else %7B\n %0A%09%09%09\n+%09\n if \n-encontrado == false\n+nova_lista%5Bj%5D == len(nova_lista)\n  %7B%0A\n+%09\n %09%09%09%09\n@@ -1969,16 +1969,22 @@\n vet%5Bi%5D)%0A\n+%09%09%09%09%7D%0A\n %09%09%09%7D%0A%09%09%7D\n",
+            "lines": "169"
+        },
+        {
+            "label": "2026-03-31_16-25-33",
+            "content": "@@ -1768,17 +1768,16 @@\n = 0; j %3C\n-=\n  len(nov\n",
+            "lines": "171"
+        },
+        {
+            "label": "2026-03-31_16-26-21",
+            "content": "@@ -1764,24 +1764,25 @@\n  j := 0; j %3C\n+=\n  len(nova_li\n@@ -1866,13 +1866,10 @@\n %09%09%7D%0A\n-%09%09%7D%0A\n %0A\n+%09\n %09%09if\n@@ -1891,16 +1891,17 @@\n false %7B%0A\n+%09\n %09%09%09nova_\n@@ -1927,32 +1927,37 @@\n _lista, vet%5Bi%5D)%0A\n+%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%09return n\n",
+            "lines": "171"
+        },
+        {
+            "label": "2026-03-31_16-30-19",
+            "content": "@@ -2003,188 +2003,15 @@\n  %7B%0A%09\n-var nova_lista %5B%5Dint%0A%0A%09for i := 0; i %3C len(vet); i++ %7B%0A%0A%09%09for j := 0; j %3C len(vet); j++ %7B%0A%09%09%09if vet%5Bj%5D == vet%5Bi%5D && i != j %7B%0A%09%09%09%09nova_lista = append(nova_lista, vet%5Bi%5D)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n+_ = vet\n %0A%09re\n",
+            "lines": "171"
+        },
+        {
+            "label": "2026-03-31_16-41-11",
+            "content": "@@ -2185,33 +2185,26 @@\n %09%7D%0A%09return n\n-ova_lista\n+il\n %0A%7D%0A%0Afunc mai\n",
+            "lines": "180"
+        },
+        {
+            "label": "2026-03-31_16-42-53",
+            "content": "@@ -2057,28 +2057,8 @@\n ++ %7B\n-%0A%09%09var repetido bool\n %0A%0A%09%09\n@@ -2093,48 +2093,8 @@\n + %7B%0A\n-%09%09%09if repetido == true %7B%0A%09%09%09%09break%0A%09%09%09%7D%0A\n %09%09%09i\n@@ -2172,28 +2172,8 @@\n i%5D)%0A\n-%09%09%09%09repetido = true%0A\n %09%09%09%7D\n",
+            "lines": "180"
+        },
+        {
+            "label": "2026-03-31_16-43-44",
+            "content": "@@ -2119,41 +2119,8 @@\n %09if \n-vet%5Bj%5D == vet%5Bi%5D && i != j %7B%0A%09%09%09%09\n repe\n@@ -2121,29 +2121,32 @@\n f repetido =\n+=\n  true\n+ %7B\n %0A%09%09%09%09break%0A%09\n@@ -2155,35 +2155,42 @@\n %7D%0A%09%09\n-%7D%0A%0A%09%09if repetido == true\n+%09if vet%5Bj%5D == vet%5Bi%5D && i != j\n  %7B%0A\n+%09\n %09%09%09n\n@@ -2220,32 +2220,57 @@\n _lista, vet%5Bi%5D)%0A\n+%09%09%09%09repetido = true%0A%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%09return n\n",
+            "lines": "185"
+        },
+        {
+            "label": "2026-03-31_16-46-04",
+            "content": "@@ -2093,34 +2093,27 @@\n  0; j %3C len(\n-nova_lista\n+vet\n ); j++ %7B%0A%09%09%09\n@@ -2131,16 +2131,26 @@\n = vet%5Bi%5D\n+ && i != j\n  %7B%0A%09%09%09%09r\n",
+            "lines": "186"
+        },
+        {
+            "label": "2026-03-31_16-47-10",
+            "content": "@@ -2093,17 +2093,31 @@\n  0; j %3C \n-i\n+len(nova_lista)\n ; j++ %7B%0A\n@@ -2122,25 +2122,25 @@\n %7B%0A%09%09%09if vet%5B\n-i\n+j\n %5D == vet%5Bj%5D \n@@ -2136,17 +2136,17 @@\n  == vet%5B\n-j\n+i\n %5D %7B%0A%09%09%09%09\n@@ -2209,85 +2209,8 @@\n e %7B%0A\n-%09%09%09for k := 0; k %3C len(nova_lista); k++ %7B%0A%09%09%09%09if vet%5Bi%5D == nova_lista%5Bk%5D %7B%0A%09%09\n %09%09%09n\n@@ -2252,19 +2252,8 @@\n i%5D)%0A\n-%09%09%09%09%7D%0A%09%09%09%7D%0A\n %09%09%7D%0A\n",
+            "lines": "186"
+        },
+        {
+            "label": "2026-03-31_17-03-28",
+            "content": "@@ -2195,29 +2195,8 @@\n e %7B%0A\n-%09%09%09var jaExiste bool%0A\n %09%09%09f\n@@ -2239,16 +2239,26 @@\n %7B%0A%09%09%09%09if\n+ vet%5Bi%5D ==\n  nova_li\n@@ -2268,93 +2268,12 @@\n %5Bk%5D \n-== vet%5Bi%5D %7B%0A%09%09%09%09%09jaExiste = true%0A%09%09%09%09%09break%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%09if repetido == false \n %7B%0A\n+%09%09\n %09%09%09n\n@@ -2303,32 +2303,43 @@\n _lista, vet%5Bi%5D)%0A\n+%09%09%09%09%7D%0A%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%09return n\n",
+            "lines": "190"
+        },
+        {
+            "label": "2026-03-31_17-07-15",
+            "content": "@@ -2340,24 +2340,24 @@\n %7D%0A%0A%09%09if \n-jaExiste\n+repetido\n  == fals\n",
+            "lines": "196"
+        },
+        {
+            "label": "2026-03-31_17-07-28",
+            "content": "@@ -2171,28 +2171,8 @@\n %09%7D%0A%0A\n-%09%09var jaExiste bool%0A\n %09%09if\n@@ -2191,16 +2191,37 @@\n  true %7B%0A\n+%09%09%09var jaExiste bool%0A\n %09%09%09for k\n",
+            "lines": "196"
+        },
+        {
+            "label": "2026-03-31_17-07-50",
+            "content": "@@ -2163,24 +2163,44 @@\n k%0A%09%09%09%7D%0A%09%09%7D%0A%0A\n+%09%09var jaExiste bool%0A\n %09%09if repetid\n@@ -2215,29 +2215,8 @@\n e %7B%0A\n-%09%09%09var jaExiste bool%0A\n %09%09%09f\n@@ -2329,18 +2329,21 @@\n %09%7D%0A%09%09%09%7D%0A\n-%0A\n %09\n+%09%7D%0A%0A\n %09%09if jaE\n@@ -2359,17 +2359,16 @@\n false %7B%0A\n-%09\n %09%09%09nova_\n@@ -2402,21 +2402,16 @@\n vet%5Bi%5D)%0A\n-%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%09\n",
+            "lines": "196"
+        },
+        {
+            "label": "2026-03-31_17-10-51",
+            "content": "@@ -2187,24 +2187,191 @@\n o == true %7B%0A\n+%09%09%09var jaExiste bool%0A%09%09%09for k := 0; k %3C len(nova_lista); k++ %7B%0A%09%09%09%09if nova_lista%5Bk%5D == vet%5Bi%5D %7B%0A%09%09%09%09%09jaExiste = true%0A%09%09%09%09%09break%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%0A%09%09%09if jaExiste == false %7B%0A%09\n %09%09%09nova_list\n@@ -2393,32 +2393,37 @@\n _lista, vet%5Bi%5D)%0A\n+%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%09return n\n",
+            "lines": "196"
+        },
+        {
+            "label": "2026-03-31_17-13-16",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc absolute(x int) int {\n\tif x < 0 {\n\t\treturn -x\n\t} else {\n\t\treturn x\n\t}\n}\n\n/*\n\tPesquisando descobri que fazendo com append n\u00e3o \u00e9 muito eficiente,\n\npois \u00e9 preciso realocar a mem\u00f3ria v\u00e1rias vezes para acrescentar os\noutros elementos.\n\nOutra forma mais eficiente poderia ser:\n  - criar um slice de lista_homens do tamanho do vetor inicial, afinal\n    sabemos que ela nao poder\u00e1 ser maior, e dessa forma garantimos que\n    haver\u00e1 realoca\u00e7\u00e3o\n    :D\n*/\nfunc getMen(vet []int) []int {\n\tvar lista_homens []int\n\tfor i := 0; i < len(vet); i++ {\n\t\tif vet[i] > 0 {\n\t\t\tlista_homens = append(lista_homens, vet[i])\n\t\t}\n\t}\n\treturn lista_homens\n}\n\n// Podemos fazer make([]int, 0, len(vet)) para criar um slice com 0 elementos\nfunc getCalmWomen(vet []int) []int {\n\tlista_mulheres := make([]int, 0, len(vet))\n\tfor i := 0; i < len(vet); i++ {\n\t\tif vet[i] < 0 && -(vet[i]) < 10 {\n\t\t\tlista_mulheres = append(lista_mulheres, vet[i])\n\t\t}\n\t}\n\treturn lista_mulheres\n}\n\nfunc sortVet(vet []int) []int {\n\tfor i := 0; i < len(vet); i++ {\n\t\tfor j := 0; j < len(vet)-1; j++ {\n\t\t\tif vet[j] > vet[j+1] {\n\t\t\t\tvet[j], vet[j+1] = vet[j+1], vet[j]\n\t\t\t}\n\t\t}\n\t}\n\n\treturn vet\n}\n\nfunc sortStress(vet []int) []int {\n\tfor i := 0; i < len(vet); i++ {\n\t\tfor j := 0; j < len(vet)-1; j++ {\n\t\t\tif absolute(vet[j]) > absolute(vet[j+1]) {\n\t\t\t\tvet[j], vet[j+1] = vet[j+1], vet[j]\n\t\t\t}\n\t\t}\n\t}\n\treturn vet\n}\n\nfunc reverse(vet []int) []int {\n\tlista := make([]int, len(vet))\n\tcopy(lista, vet)\n\n\tvar aux = len(lista) - 1\n\tfor i := 0; i < len(lista)/2; i++ {\n\t\tlista[i], lista[aux] = lista[aux], lista[i]\n\t\taux--\n\t}\n\treturn lista\n}\n\nfunc unique(vet []int) []int {\n\tvar nova_lista []int\n\n\tfor i := 0; i < len(vet); i++ {\n\t\tvar encontrado bool\n\n\t\tfor j := 0; j < len(nova_lista); j++ {\n\t\t\tif vet[i] == nova_lista[j] {\n\t\t\t\tencontrado = true\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\n\t\tif encontrado == false {\n\t\t\tnova_lista = append(nova_lista, vet[i])\n\t\t}\n\t}\n\treturn nova_lista\n}\n\nfunc repeated(vet []int) []int {\n\tvar nova_lista []int\n\n\tfor i := 0; i < len(vet); i++ {\n\t\tvar repetido bool\n\n\t\tfor j := 0; j < i; j++ {\n\t\t\tif vet[i] == vet[j] {\n\t\t\t\trepetido = true\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\n\t\tif repetido == true {\n\t\t\tnova_lista = append(nova_lista, vet[i])\n\t\t}\n\t}\n\treturn nova_lista\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tfmt.Print(\"$\")\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"get_men\":\n\t\t\tprintVec(getMen(str2vet(args[1])))\n\t\tcase \"get_calm_women\":\n\t\t\tprintVec(getCalmWomen(str2vet(args[1])))\n\t\tcase \"sort\":\n\t\t\tprintVec(sortVet(str2vet(args[1])))\n\t\tcase \"sort_stress\":\n\t\t\tprintVec(sortStress(str2vet(args[1])))\n\t\tcase \"reverse\":\n\t\t\tarray := str2vet(args[1])\n\t\t\tother := reverse(array)\n\t\t\tprintVec(array)\n\t\t\tprintVec(other)\n\t\tcase \"unique\":\n\t\t\tprintVec(unique(str2vet(args[1])))\n\t\tcase \"repeated\":\n\t\t\tprintVec(repeated(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\t}\n\t}\n}\n\nfunc printVec(vet []int) {\n\tfmt.Print(\"[\")\n\tfor i, val := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(val)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc str2vet(s string) []int {\n\tif s == \"[]\" {\n\t\treturn nil\n\t}\n\ts = s[1 : len(s)-1]\n\tparts := strings.Split(s, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tn, _ := strconv.Atoi(part)\n\t\tvet = append(vet, n)\n\t}\n\treturn vet\n}\n",
+            "lines": "186"
         }
     ]
 }
