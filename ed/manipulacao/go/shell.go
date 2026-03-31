@@ -8,29 +8,80 @@ import (
 	"strings"
 )
 
-func getMen(vet []int) []int {
-	_ = vet
-	return nil
+func absolute(x int) int {
+	if x < 0 {
+		return -x
+	} else {
+		return x
+	}
 }
 
+/*
+	Pesquisando descobri que fazendo com append não é muito eficiente,
+
+pois é preciso realocar a memória várias vezes para acrescentar os
+outros elementos.
+
+Outra forma mais eficiente poderia ser:
+  - criar um slice de lista_homens do tamanho do vetor inicial, afinal
+    sabemos que ela nao poderá ser maior, e dessa forma garantimos que
+    haverá realocação
+    :D
+*/
+func getMen(vet []int) []int {
+	var lista_homens []int
+	for i := 0; i < len(vet); i++ {
+		if vet[i] > 0 {
+			lista_homens = append(lista_homens, vet[i])
+		}
+	}
+	return lista_homens
+}
+
+// Podemos fazer make([]int, 0, len(vet)) para criar um slice com 0 elementos
 func getCalmWomen(vet []int) []int {
-	_ = vet
-	return nil
+	lista_mulheres := make([]int, 0, len(vet))
+	for i := 0; i < len(vet); i++ {
+		if vet[i] < 0 && -(vet[i]) < 10 {
+			lista_mulheres = append(lista_mulheres, vet[i])
+		}
+	}
+	return lista_mulheres
 }
 
 func sortVet(vet []int) []int {
-	_ = vet
-	return nil
+	for i := 0; i < len(vet); i++ {
+		for j := 0; j < len(vet)-1; j++ {
+			if vet[j] > vet[j+1] {
+				vet[j], vet[j+1] = vet[j+1], vet[j]
+			}
+		}
+	}
+
+	return vet
 }
 
 func sortStress(vet []int) []int {
-	_ = vet
-	return nil
+	for i := 0; i < len(vet); i++ {
+		for j := 0; j < len(vet)-1; j++ {
+			if absolute(vet[j]) > absolute(vet[j+1]) {
+				vet[j], vet[j+1] = vet[j+1], vet[j]
+			}
+		}
+	}
+	return vet
 }
 
 func reverse(vet []int) []int {
-	_ = vet
-	return nil
+	lista := make([]int, len(vet))
+	copy(lista, vet)
+
+	var aux = len(lista) - 1
+	for i := 0; i < len(lista)/2; i++ {
+		lista[i], lista[aux] = lista[aux], lista[i]
+		aux--
+	}
+	return lista
 }
 
 func unique(vet []int) []int {
@@ -103,4 +154,3 @@ func str2vet(s string) []int {
 	}
 	return vet
 }
-
