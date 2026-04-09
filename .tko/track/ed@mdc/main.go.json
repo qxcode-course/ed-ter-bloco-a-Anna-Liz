@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-09_18-46-30",
+            "content": "@@ -176,24 +176,16 @@\n %09if \n-a\n+div\n  == \n-0 %7C%7C b == 0\n+b\n  %7B%0A%09\n@@ -251,16 +251,23 @@\n a %25 b%0A%09%09\n+return \n mdc(b, r\n@@ -271,29 +271,16 @@\n , resto)\n-%0A%09%09return div\n %0A%0A%09%7D els\n@@ -315,16 +315,23 @@\n b %25 a%0A%09%09\n+return \n mdc(a, r\n@@ -340,21 +340,8 @@\n to)%0A\n-%09%09return div%0A\n %09%7D%0A%7D\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-09_18-48-25",
+            "content": "@@ -155,18 +155,16 @@\n to int%0A%09\n-//\n var div \n@@ -225,26 +225,24 @@\n r(a, b) %7B%0A%09%09\n-//\n div = a / b%0A\n@@ -282,17 +282,19 @@\n %09return \n-a\n+div\n %0A%0A%09%7D els\n@@ -303,10 +303,8 @@\n %7B%0A%09%09\n-//\n div \n@@ -348,25 +348,27 @@\n o)%0A%09%09return \n-b\n+div\n %0A%09%7D%0A%7D%0A%0Afunc \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-09_18-52-39",
+            "content": "@@ -155,16 +155,18 @@\n to int%0A%09\n+//\n var div \n@@ -169,16 +169,16 @@\n div int%0A\n-\n %0A%09if a =\n@@ -202,17 +202,17 @@\n %09return \n-a\n+b\n %0A%09%7D%0A%0A%09if\n@@ -286,19 +286,17 @@\n %09return \n-div\n+a\n %0A%0A%09%7D els\n@@ -356,19 +356,17 @@\n %09return \n-div\n+b\n %0A%09%7D%0A%7D%0A%0Af\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-09_18-56-08",
+            "content": "@@ -197,66 +197,16 @@\n %7B%0A%09%09\n-if aEhMaior(a, b) %7B%0A%09%09%09return a%0A%09%09%7D else %7B%0A%09%09%09return b%0A%09%09%7D\n+return a\n %0A%09%7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-09_18-57-42",
+            "content": "@@ -153,16 +153,29 @@\n esto int\n+%0A%09var div int\n %0A%0A%09if a \n@@ -197,16 +197,66 @@\n %7B%0A%09%09\n-return a\n+if aEhMaior(a, b) %7B%0A%09%09%09return a%0A%09%09%7D else %7B%0A%09%09%09return b%0A%09%09%7D\n %0A%09%7D%0A\n@@ -277,16 +277,32 @@\n a, b) %7B%0A\n+%09%09//div = a / b%0A\n %09%09resto \n@@ -311,23 +311,16 @@\n a %25 b%0A%09%09\n-return \n mdc(b, r\n@@ -326,24 +326,54 @@\n resto)%0A%09\n-%7D else %7B\n+%09return div%0A%0A%09%7D else %7B%0A%09%09//div = b / a\n %0A%09%09resto\n@@ -383,23 +383,16 @@\n b %25 a%0A%09%09\n-return \n mdc(a, r\n@@ -397,16 +397,29 @@\n  resto)%0A\n+%09%09return div%0A\n %09%7D%0A%7D%0A%0Afu\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-09_19-02-19",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc aEhMaior(a, b int) bool {\n\tif a > b {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}\n\nfunc mdc(a, b int) int {\n\tvar resto int\n\n\tif a == 0 || b == 0 {\n\t\treturn a\n\t}\n\n\tif aEhMaior(a, b) {\n\t\tresto = a % b\n\t\treturn mdc(b, resto)\n\t} else {\n\t\tresto = b % a\n\t\treturn mdc(a, resto)\n\t}\n}\n\nfunc main() {\n\tvar a, b int\n\tfmt.Scan(&a, &b)\n\tfmt.Println(mdc(a, b))\n}\n",
+            "lines": "35"
+        }
+    ]
+}
