@@ -36,3 +36,23 @@
 2026-04-07 17:23:50, MOVE, v:1, k:ed@triangulo, mode:BACK
 2026-04-07 17:26:30, SELF, v:1, k:ed@triangulo, self:1, rate:100, study:20, friend:Vinicius me tirou umas duvidas
 2026-04-07 17:26:53, MOVE, v:1, k:ed@resto, mode:DOWN
+2026-04-07 17:29:30, MOVE, v:1, k:ed@resto, mode:PICK
+2026-04-07 17:40:46, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:20
+2026-04-07 17:41:36, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:21
+2026-04-07 17:42:42, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:21
+2026-04-07 17:42:40, MOVE, v:1, k:ed@resto, mode:EDIT
+2026-04-07 17:43:03, EXEC, v:1, k:ed@resto, mode:FULL, rate:0
+2026-04-07 17:44:35, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:21
+2026-04-07 17:46:01, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:19
+2026-04-07 17:46:49, MOVE, v:1, k:ed@resto, mode:EDIT
+2026-04-07 17:48:12, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:19
+2026-04-07 17:48:48, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:18
+2026-04-07 17:49:26, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:19
+2026-04-07 17:50:17, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:19
+2026-04-07 17:51:41, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:21
+2026-04-07 17:52:19, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:23
+2026-04-07 17:52:17, MOVE, v:1, k:ed@resto, mode:EDIT
+2026-04-07 17:54:13, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:19
+2026-04-07 17:56:03, EXEC, v:1, k:ed@resto, mode:FULL, rate:100, size:19
+2026-04-07 17:56:13, MOVE, v:1, k:ed@resto, mode:BACK
+2026-04-07 17:56:47, SELF, v:1, k:ed@resto, self:1, rate:100, study:20

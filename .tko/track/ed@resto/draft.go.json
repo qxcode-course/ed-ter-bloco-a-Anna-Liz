@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-07_17-40-45",
+            "content": "@@ -61,27 +61,8 @@\n ) %7B%0A\n-%09fmt.Print(numero)%0A\n %09if \n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-07_17-41-36",
+            "content": "@@ -237,9 +237,8 @@\n can(\n-&\n x)%0A%09\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-04-07_17-42-42",
+            "content": "@@ -226,12 +226,8 @@\n  int\n- = 0\n %0A%09fm\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-04-07_17-44-35",
+            "content": "@@ -132,16 +132,34 @@\n ero / 2%0A\n+%09if numero %3E 0 %7B%0A%09\n %09resto(n\n@@ -165,16 +165,19 @@\n numero)%0A\n+%09%7D%0A\n %09return \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-04-07_17-46-01",
+            "content": "@@ -43,19 +43,30 @@\n ero int)\n+ (int, int)\n  %7B%0A\n-\n %09fmt.Pri\n@@ -102,16 +102,21 @@\n %09%09return\n+ 0, 1\n %0A%09%7D%0A%09num\n@@ -152,20 +152,15 @@\n o)%0A%09\n-fmt.Println(\n+return \n nume\n@@ -173,11 +173,12 @@\n mero\n-%252)\n+ %25 2\n %0A%7D%0A%0A\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-04-07_17-48-12",
+            "content": "@@ -46,16 +46,35 @@\n  int) %7B%0A\n+%09fmt.Print(numero)%0A\n %09if nume\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-04-07_17-48-48",
+            "content": "@@ -101,29 +101,8 @@\n / 2%0A\n-%09resti := numero %25 2%0A\n %09res\n@@ -137,13 +137,16 @@\n ro, \n-resti\n+numero%252\n )%0A%7D%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-04-07_17-49-25",
+            "content": "@@ -70,25 +70,14 @@\n %7B%0A%09%09\n-fmt.Println(0, 1)\n+return\n %0A%09%7D%0A\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-04-07_17-50-17",
+            "content": "@@ -88,18 +88,8 @@\n  1)%0A\n-%09%09return%0A%0A\n %09%7D%0A%09\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-04-07_17-51-41",
+            "content": "@@ -101,26 +101,8 @@\n %0A%09%7D%0A\n-%09if numero %3E 0 %7B%0A%09\n %09num\n@@ -118,17 +118,16 @@\n ero / 2%0A\n-%09\n %09resti :\n@@ -139,17 +139,16 @@\n ero %25 2%0A\n-%09\n %09resto(n\n@@ -154,17 +154,16 @@\n numero)%0A\n-%09\n %09fmt.Pri\n@@ -182,19 +182,16 @@\n  resti)%0A\n-%09%7D%0A\n %7D%0A%0Afunc \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-04-07_17-52-19",
+            "content": "@@ -64,16 +64,36 @@\n  == 0 %7B%0A\n+%09%09fmt.Println(0, 1)%0A\n %09%09return\n@@ -97,11 +97,30 @@\n urn%0A\n+%0A\n %09%7D%0A\n+%09if numero %3E 0 %7B%0A%09\n %09num\n@@ -136,16 +136,17 @@\n ero / 2%0A\n+%09\n %09resti :\n@@ -151,25 +151,20 @@\n  := \n-(\n numero\n- * 2)\n  %25 2%0A\n+%09\n %09res\n@@ -174,16 +174,17 @@\n numero)%0A\n+%09\n %09fmt.Pri\n@@ -203,16 +203,19 @@\n  resti)%0A\n+%09%7D%0A\n %7D%0A%0Afunc \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-07_17-54-13",
+            "content": "@@ -81,15 +81,15 @@\n %09%7D%0A%09\n-resti :\n+numero \n = nu\n@@ -97,30 +97,36 @@\n ero \n-%25\n+/\n  2%0A%09\n-numero \n+resti :\n = \n+(\n numero \n-/\n+* 2) %25\n  2%0A%09\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-04-07_17-56-03",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc resto(numero int) {\n\tif numero == 0 {\n\t\treturn\n\t}\n\tresti := numero % 2\n\tnumero = numero / 2\n\tresto(numero)\n\tfmt.Println(numero, resti)\n}\n\nfunc main() {\n\tvar x int = 0\n\tfmt.Scan(&x)\n\tresto(x)\n}\n",
+            "lines": "19"
+        }
+    ]
+}
