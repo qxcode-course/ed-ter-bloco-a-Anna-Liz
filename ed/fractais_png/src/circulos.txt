@@ -1,0 +1,32 @@
+package main
+
+import (
+	"fmt"
+)
+
+func circulos(pen *Pen, raio float64) {
+	if raio < 5.5 {
+		return
+	}
+	pen.DrawCircle(raio)
+	for range 6 {
+		pen.Up()
+		pen.Walk(raio)
+		pen.Down()
+		pen.DrawCircle(raio / 3)
+		circulos(pen, raio/3)
+		pen.Up()
+		pen.Walk(-raio)
+		pen.Left(60)
+	}
+}
+
+func main() {
+	pen := NewPen(600, 500)
+	pen.SetLineWidth(0.5)
+	pen.SetHeading(90)
+	pen.SetPosition(300, 250)
+	circulos(pen, 160)
+	pen.SavePNG("circulo.png")
+	fmt.Println("PNG file created successfully.")
+}

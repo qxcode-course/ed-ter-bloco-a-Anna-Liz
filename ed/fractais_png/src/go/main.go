@@ -4,24 +4,27 @@ import (
 	"fmt"
 )
 
-func circulos(pen *Pen, raio float64) {
-	if raio < 60 {
+func arvore(pen *Pen, galho float64) {
+	if galho < 2 {
 		return
 	}
-	for range 6 {
-		pen.DrawCircle(raio)
 
-		pen.Left(60)
-		pen.Walk(raio)
-		circulos(pen, raio-120)
-	}
+	pen.Walk(galho)
+	pen.Left(30)
+	arvore(pen, galho*0.7)
+	pen.Right(60)
+	arvore(pen, galho*0.7)
+	pen.Left(30)
+	pen.Walk(-galho)
+
 }
 
 func main() {
 	pen := NewPen(600, 500)
+	pen.SetLineWidth(0.7)
 	pen.SetHeading(90)
-	pen.SetPosition(300, 250)
-	circulos(pen, 160)
-	pen.SavePNG("circulo.png")
+	pen.SetPosition(300, 500)
+	arvore(pen, 150)
+	pen.SavePNG("tree.png")
 	fmt.Println("PNG file created successfully.")
 }
