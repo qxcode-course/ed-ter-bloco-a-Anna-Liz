@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_14-36-04",
+            "content": "@@ -263,25 +263,7 @@\n , n)\n-%0A%0A%09fmt.Print(fila)\n %0A%7D%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-04-14_14-36-19",
+            "content": "@@ -88,17 +88,24 @@\n %7B%0A%09%09var \n-x\n+elemento\n  int%0A%09%09f\n@@ -113,17 +113,24 @@\n t.Scan(&\n-x\n+elemento\n )%0A%09%09vet \n@@ -147,9 +147,16 @@\n et, \n-x\n+elemento\n )%0A%09%7D\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-14_14-38-22",
+            "content": "@@ -218,76 +218,32 @@\n n)%0A%09\n-for range n %7B%0A%09%09var x int%0A%09%09fmt.Scan(&x)%0A%09%09fila = append\n+preencher_vetor\n (fila, \n-x)%0A%09%7D\n+n)\n %0A%0A%09f\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-14_14-39-05",
+            "content": "@@ -213,11 +213,8 @@\n int,\n- 0,\n  n)%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-14_14-39-22",
+            "content": "@@ -221,32 +221,76 @@\n n)%0A%09\n-preencher_vetor\n+for range n %7B%0A%09%09var x int%0A%09%09fmt.Scan(&x)%0A%09%09fila = append\n (fila, \n-n)\n+x)%0A%09%7D\n %0A%0A%09f\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-14_14-39-40",
+            "content": "@@ -29,64 +29,49 @@\n unc \n-main() %7B%0A%09var n, m\n+preencher_vetor(vet %5B%5Dint, n\n  int\n-%0A%09fmt.Scan(&n, m)%0A%0A%09var fila\n+)\n  %5B%5Dint\n+ %7B\n %0A%09fo\n@@ -111,20 +111,19 @@\n n(&x)%0A%09%09\n-fila\n+vet\n  = appen\n@@ -128,20 +128,19 @@\n end(\n-fila\n+vet\n , x)%0A%09%7D%0A\n %0A%09re\n@@ -139,67 +139,48 @@\n %0A%09%7D%0A\n-%0A\n %09re\n-mover := make(%5B%5Dint, 0, m)%0A%09for range m\n+turn vet%0A%7D%0A%0Afunc main()\n  %7B%0A\n-%09\n %09var \n-x\n+n\n  int%0A\n-%09\n %09fmt\n@@ -190,46 +190,64 @@\n an(&\n-x)%0A%09%09remover = append(remover, x\n+n)%0A%09fila := make(%5B%5Dint, 0, n)%0A%09preencher_vetor(fila, n\n )%0A\n-%09%7D%0A%09\n %0A%09fm\n@@ -258,15 +258,12 @@\n int(\n-remover\n+fila\n )%0A%7D%0A\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-14_14-44-13",
+            "content": "@@ -62,17 +62,16 @@\n can(&n, \n-&\n m)%0A%0A%09var\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-14_14-45-42",
+            "content": "@@ -182,12 +182,12 @@\n nt, \n-m, 0\n+0, m\n )%0A%09f\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-14_14-46-09",
+            "content": "@@ -182,12 +182,12 @@\n nt, \n-0, m\n+m, 0\n )%0A%09f\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-14_14-46-43",
+            "content": "@@ -61,13 +61,15 @@\n Scan\n-ln\n (&n\n+, &m\n )%0A%0A%09\n@@ -158,24 +158,8 @@\n %09%7D%0A%0A\n-%09fmt.Scanln(&m)%0A\n %09rem\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-14_14-47-41",
+            "content": "@@ -279,25 +279,8 @@\n %09%7D%0A%09\n-fmt.Println(fila)\n %0A%09fm\n@@ -286,18 +286,16 @@\n mt.Print\n-ln\n (remover\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-14_14-51-20",
+            "content": "@@ -40,21 +40,24 @@\n %7B%0A%09var n\n+, m\n  int%0A\n-\n %09fmt.Sca\n@@ -156,19 +156,8 @@\n %09%7D%0A%0A\n-%09var m int%0A\n %09fmt\n@@ -219,17 +219,17 @@\n %7B%0A%09%09var \n-y\n+x\n  int%0A%09%09f\n@@ -237,17 +237,17 @@\n t.Scan(&\n-y\n+x\n )%0A%09%09remo\n@@ -272,9 +272,9 @@\n er, \n-y\n+x\n )%0A%09%7D\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-14_14-52-17",
+            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tfmt.Scanln(&n)\n\n\tvar fila []int\n\tfor range n {\n\t\tvar x int\n\t\tfmt.Scan(&x)\n\t\tfila = append(fila, x)\n\t}\n\n\tvar m int\n\tfmt.Scanln(&m)\n\tremover := make([]int, 0, m)\n\tfor range m {\n\t\tvar y int\n\t\tfmt.Scan(&y)\n\t\tremover = append(remover, y)\n\t}\n\tfmt.Println(fila)\n\tfmt.Println(remover)\n}\n",
+            "lines": "25"
+        }
+    ]
+}

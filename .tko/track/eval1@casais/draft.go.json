@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_13-59-14",
+            "content": "@@ -272,17 +272,17 @@\n casados%5B\n-j\n+i\n %5D == -x \n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-14_13-59-42",
+            "content": "@@ -25,17 +25,16 @@\n %22fmt%22%0A)%0A\n-%0A\n func mai\n@@ -39,17 +39,20 @@\n ain() %7B%0A\n-%09\n+    \n var n, c\n@@ -63,17 +63,20 @@\n dor int%0A\n-%09\n+    \n var desc\n@@ -88,17 +88,20 @@\n s %5B%5Dint%0A\n-%09\n+    \n fmt.Scan\n@@ -110,36 +110,42 @@\n n)%0A%0A\n-%09\n+    \n for i\n- \n :=\n- \n 0\n+ \n ; i\n- %3C n\n+%3Cn \n ; i++\n- \n %7B%0A\n-%09%09\n+        \n var \n@@ -150,18 +150,24 @@\n r x int%0A\n-%09%09\n+        \n fmt.Scan\n@@ -171,18 +171,24 @@\n can(&x)%0A\n-%09%09\n+        \n descasad\n@@ -219,52 +219,51 @@\n x)%0A%0A\n-%09%09\n+        \n for j\n- \n :=\n- \n 0\n+ \n ; j\n- %3C len(descasados); j++ %7B%0A%09%09%09\n+%3Cn ; j++ %7B%0A            \n if d\n@@ -283,20 +283,32 @@\n == -x %7B%0A\n-%09%09%09%09\n+                \n descasad\n@@ -317,20 +317,32 @@\n %5Bi%5D = 0%0A\n-%09%09%09%09\n+                \n descasad\n@@ -355,37 +355,70 @@\n = 0%0A\n-%09%09%09%09contador++%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09\n+                contador++%0A            %7D%0A        %7D%0A    %7D%0A%0A    \n fmt.\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-14_14-02-01",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar n, contador int\n\tvar descasados []int\n\tfmt.Scan(&n)\n\n\tfor i := 0; i < n; i++ {\n\t\tvar x int\n\t\tfmt.Scan(&x)\n\t\tdescasados = append(descasados, x)\n\n\t\tfor j := 0; j < len(descasados); j++ {\n\t\t\tif descasados[j] == -x {\n\t\t\t\tdescasados[i] = 0\n\t\t\t\tdescasados[j] = 0\n\t\t\t\tcontador++\n\t\t\t}\n\t\t}\n\t}\n\n\tfmt.Println(contador)\n\n}\n",
+            "lines": "28"
+        }
+    ]
+}

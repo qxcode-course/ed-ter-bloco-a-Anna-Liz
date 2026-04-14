@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_13-23-08",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -33,17 +33,20 @@\n ain() %7B%0A\n-%09\n+    \n var tota\n@@ -56,17 +56,20 @@\n qtd int%0A\n-%09\n+    \n var poss\n@@ -77,25 +77,28 @@\n i %5B%5Dint%0A\n-%09\n+    \n fmt.Scan\n (&total,\n@@ -89,16 +89,18 @@\n fmt.Scan\n+ln\n (&total,\n@@ -110,37 +110,42 @@\n td)%0A\n-%0A%09\n+    %0A    \n for i\n- \n :=\n- \n 0\n+ \n ; i\n- %3C \n+%3C\n qtd\n+ \n ; i++ %7B%0A\n %09%09va\n@@ -140,18 +140,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n var x in\n@@ -158,18 +158,24 @@\n r x int%0A\n-%09%09\n+        \n fmt.Scan\n@@ -182,10 +182,16 @@\n (x)%0A\n-%09%09\n+        \n poss\n@@ -217,13 +217,19 @@\n  x)%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n fmt.\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-04-14_13-23-29",
+            "content": "@@ -199,23 +199,9 @@\n rint\n-ln(total, qtd, \n+(\n poss\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-04-14_13-24-51",
+            "content": "@@ -149,17 +149,16 @@\n mt.Scan(\n-&\n x)%0A%09%09pos\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-04-14_13-25-39",
+            "content": "@@ -191,160 +191,38 @@\n %7D%0A%0A%09\n-var repetidas %5B%5Dint%0A%09for i := 1; i %3C qtd; i++ %7B%0A%09%09if possui%5Bi%5D == possui%5Bi-1%5D %7B%0A%09%09%09repetidas = append(repetidas, possui%5Bi%5D)%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Print(repetidas\n+fmt.Println(total, qtd, possui\n )%0A%7D%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-04-14_13-28-08",
+            "content": "@@ -324,200 +324,27 @@\n %7D%0A%0A%09\n-if len(repetidas) == 0 %7B%0A%09%09fmt.Print(%22N%22)%0A%09%7D else %7B%0A%09%09for i := 0; i %3C len(repetidas); i++ %7B%0A%09%09%09if i == len(repetidas)-1 %7B%0A%09%09%09%09fmt.Print(repetidas%5Bi%5D)%0A%09%09%09%7D%0A%09%09%09fmt.Print(repetidas%5Bi%5D, %22 %22)%0A%09%09%7D%0A%09%7D\n+fmt.Print(repetidas)\n %0A%7D%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-14_13-32-48",
+            "content": "@@ -459,10 +459,8 @@\n rint\n-ln\n (rep\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_13-33-41",
+            "content": "@@ -323,250 +323,8 @@\n %09%7D%0A%0A\n-    var faltando %5B%5Dint%0A    var aux int%0A    for i:=1 ; i%3Ctotal ; i++%7B%0A        for i %3C qtd %7C%7C possui%5Baux%5D %3C i %7B%0A            aux++%0A        %7D%0A        if aux %3E= qtd %7C%7C possui%5Baux%5D != i %7B%0A            faltando = append(faltando, i)%0A        %7D%0A    %7D%0A%0A\n %09if \n@@ -476,25 +476,17 @@\n i%5D)%0A%09%09%09%7D\n- else %7B%0A%09\n+%0A\n %09%09%09fmt.P\n@@ -509,21 +509,16 @@\n %5D, %22 %22)%0A\n-%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%7D\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_13-38-54",
+            "content": "@@ -315,25 +315,28 @@\n i%5D)%0A%09%09%7D%0A%09%7D%0A%0A\n-%09\n+    \n var faltando\n@@ -338,25 +338,28 @@\n tando %5B%5Dint%0A\n-%09\n+    \n var aux int%0A\n@@ -362,40 +362,46 @@\n int%0A\n-%09\n+    \n for i\n- \n :=\n- \n 1\n+ \n ; i\n- %3C \n+%3C\n total\n+ \n ; i++\n- \n %7B%0A\n-%09%09\n+        \n for \n@@ -433,23 +433,44 @@\n i %7B%0A\n-%09%09%09aux++%0A%09%09%7D%0A%09%09\n+            aux++%0A        %7D%0A        \n if a\n@@ -501,19 +501,28 @@\n  != i %7B%0A\n-%09%09%09\n+            \n faltando\n@@ -544,21 +544,30 @@\n ndo, i)%0A\n-%09%09%7D%0A%09\n+        %7D%0A    \n %7D%0A%0A%09if l\n@@ -772,31 +772,9 @@\n %09%09%7D%0A\n+\n %09%7D\n-%0A%0A%09fmt.Print(faltando)\n %0A%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-14_13-39-47",
+            "content": "@@ -25,220 +25,8 @@\n t%22%0A%0A\n-func printar(vet %5B%5Dint) %7B%0A    if len(vet) == 0 %7B%0A%09%09fmt.Print(%22N%22)%0A%09%7D else %7B%0A%09%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09%09if i == len(vet)-1 %7B%0A%09%09%09%09fmt.Println(vet%5Bi%5D)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Print(vet%5Bi%5D, %22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%7D%0A%0A\n func\n@@ -400,10 +400,10 @@\n qtd \n-&&\n+%7C%7C\n  pos\n@@ -515,38 +515,228 @@\n %7D%0A%0A%09\n-printar(repetidas)%0A    printar\n+if len(repetidas) == 0 %7B%0A%09%09fmt.Print(%22N%22)%0A%09%7D else %7B%0A%09%09for i := 0; i %3C len(repetidas); i++ %7B%0A%09%09%09if i == len(repetidas)-1 %7B%0A%09%09%09%09fmt.Println(repetidas%5Bi%5D)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Print(repetidas%5Bi%5D, %22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Print\n (fal\n@@ -746,8 +746,6 @@\n do)%0A\n-%09%0A\n %7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-14_13-48-35",
+            "content": "@@ -81,18 +81,16 @@\n mt.Print\n-ln\n (%22N%22)%0A%09%7D\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-14_13-49-02",
+            "content": "@@ -602,19 +602,17 @@\n %7B%0A%09%09for \n-aux\n+i\n  %3C qtd &\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-14_13-51-42",
+            "content": "@@ -47,17 +47,20 @@\n %5Dint) %7B%0A\n-%09\n+    \n if len(v\n@@ -582,17 +582,16 @@\n = 1; i %3C\n-=\n  total; \n@@ -746,17 +746,20 @@\n etidas)%0A\n-%09\n+    \n printar(\n@@ -768,11 +768,12 @@\n ltando)%0A\n+%09\n %0A%7D%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-14_13-52-42",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc printar(vet []int) {\n\tif len(vet) == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfor i := 0; i < len(vet); i++ {\n\t\t\tif i == len(vet)-1 {\n\t\t\t\tfmt.Println(vet[i])\n\t\t\t} else {\n\t\t\t\tfmt.Print(vet[i], \" \")\n\t\t\t}\n\t\t}\n\t}\n}\n\nfunc main() {\n\tvar total, qtd int\n\tvar possui []int\n\tfmt.Scan(&total, &qtd)\n\n\tfor i := 0; i < qtd; i++ {\n\t\tvar x int\n\t\tfmt.Scan(&x)\n\t\tpossui = append(possui, x)\n\t}\n\n\tvar repetidas []int\n\tfor i := 1; i < qtd; i++ {\n\t\tif possui[i] == possui[i-1] {\n\t\t\trepetidas = append(repetidas, possui[i])\n\t\t}\n\t}\n\n\tvar faltando []int\n\tvar aux int\n\tfor i := 1; i <= total; i++ {\n\t\tfor aux < qtd && possui[aux] < i {\n\t\t\taux++\n\t\t}\n\t\tif aux >= qtd || possui[aux] != i {\n\t\t\tfaltando = append(faltando, i)\n\t\t}\n\t}\n\n\tprintar(repetidas)\n\tprintar(faltando)\n\n}\n",
+            "lines": "51"
+        }
+    ]
+}
