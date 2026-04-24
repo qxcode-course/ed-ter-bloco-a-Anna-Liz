@@ -1,0 +1,25 @@
+import (
+	"fmt"
+)
+
+func gelo(pen *Pen, dist float64) {
+	if dist < 0.2 {
+		return
+	}
+	for range 5 {
+		pen.Walk(dist)
+		gelo(pen, dist*0.3)
+		pen.Walk(-dist)
+		pen.Left(72)
+	}
+}
+
+func main() {
+	pen := NewPen(600, 500)
+	pen.SetLineWidth(0.7)
+	pen.SetHeading(90)
+	pen.SetPosition(300, 275)
+	gelo(pen, 200)
+	pen.SavePNG("gelo.png")
+	fmt.Println("PNG file created successfully.")
+}

@@ -522,8 +522,613 @@
         },
         {
             "label": "2026-04-13_21-30-37",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc arvore(pen *Pen, galho float64) {\n\tif galho < 2 {\n\t\treturn\n\t}\n\n\tpen.Walk(galho)\n\tpen.Left(30)\n\tarvore(pen, galho*0.7)\n\tpen.Right(60)\n\tarvore(pen, galho*0.7)\n\tpen.Left(30)\n\tpen.Walk(-galho)\n\n}\n\nfunc main() {\n\tpen := NewPen(600, 500)\n\tpen.SetLineWidth(0.7)\n\tpen.SetHeading(90)\n\tpen.SetPosition(300, 500)\n\tarvore(pen, 150)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "content": "@@ -31,20 +31,22 @@\n )%0A%0Afunc \n-gelo\n+arvore\n (pen *Pe\n@@ -48,20 +48,21 @@\n n *Pen, \n-size\n+galho\n  float64\n@@ -73,16 +73,17 @@\n %09if \n-size %3C 5\n+galho %3C 2\n  %7B%0A%09\n@@ -94,16 +94,143 @@\n urn%0A%09%7D%0A%0A\n+%09pen.Walk(galho)%0A%09pen.Left(30)%0A%09arvore(pen, galho*0.7)%0A%09pen.Right(60)%0A%09arvore(pen, galho*0.7)%0A%09pen.Left(30)%0A%09pen.Walk(-galho)%0A%0A\n %7D%0A%0Afunc \n@@ -268,10 +268,8 @@\n 0)%0A%09\n-//\n pen.\n@@ -332,18 +332,20 @@\n 00, \n-4\n 5\n+0\n 0)%0A%09\n-gelo\n+arvore\n (pen\n@@ -369,12 +369,12 @@\n NG(%22\n-gelo\n+tree\n .png\n",
             "lines": "30"
+        },
+        {
+            "label": "2026-04-15_22-03-44",
+            "content": "@@ -92,27 +92,8 @@\n n%0A%09%7D\n-%0A%09pen.DrawCircle(6)\n %0A%0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-15_22-04-27",
+            "content": "@@ -222,9 +222,9 @@\n 00, \n-2\n+4\n 50)%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-15_22-04-38",
+            "content": "@@ -218,18 +218,18 @@\n on(300, \n-30\n+25\n 0)%0A%09gelo\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-15_22-04-45",
+            "content": "@@ -222,11 +222,11 @@\n 00, \n-275\n+300\n )%0A%09g\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-15_22-04-59",
+            "content": "@@ -46,20 +46,20 @@\n n *Pen, \n-dist\n+size\n  float64\n@@ -66,20 +66,20 @@\n ) %7B%0A%09if \n-dist\n+size\n  %3C 5 %7B%0A%09\n@@ -94,74 +94,25 @@\n %09%7D%0A%09\n-for range 5 %7B%0A%09%09pen.Left(45)%0A%09%09pen.Walk(dist)%0A%09%09pen.Walk(-dist)%0A%09%7D\n+pen.DrawCircle(6)\n %0A%0A%7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-15_22-07-18",
+            "content": "@@ -115,17 +115,17 @@\n en.Left(\n-7\n+4\n 5)%0A%09%09pen\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-07-38",
+            "content": "@@ -241,18 +241,18 @@\n Heading(\n-75\n+90\n )%0A%09pen.S\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-10-46",
+            "content": "@@ -245,10 +245,10 @@\n ing(\n-80\n+75\n )%0A%09p\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-10-55",
+            "content": "@@ -242,17 +242,17 @@\n eading(8\n-5\n+0\n )%0A%09pen.S\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-11-01",
+            "content": "@@ -245,10 +245,10 @@\n ing(\n-90\n+85\n )%0A%09p\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-11-59",
+            "content": "@@ -241,17 +241,17 @@\n Heading(\n-6\n+9\n 0)%0A%09pen.\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-12-16",
+            "content": "@@ -245,9 +245,9 @@\n ing(\n-9\n+6\n 0)%0A%09\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-12-32",
+            "content": "@@ -140,30 +140,8 @@\n st)%0A\n-%09%09gelo(pen, dist*0.7)%0A\n %09%09pe\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-13-27",
+            "content": "@@ -155,17 +155,17 @@\n  dist*0.\n-5\n+7\n )%0A%09%09pen.\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-15_22-13-56",
+            "content": "@@ -104,16 +104,31 @@\n nge 5 %7B%0A\n+%09%09pen.Left(75)%0A\n %09%09pen.Wa\n@@ -176,31 +176,16 @@\n (-dist)%0A\n-%09%09pen.Left(75)%0A\n %09%7D%0A%0A%7D%0A%0Af\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-15_22-16-20",
+            "content": "@@ -77,10 +77,9 @@\n t %3C \n-10\n+5\n  %7B%0A%09\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-15_22-16-32",
+            "content": "@@ -118,24 +118,46 @@\n .Walk(dist)%0A\n+%09%09gelo(pen, dist*0.5)%0A\n %09%09pen.Walk(-\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-15_22-17-23",
+            "content": "@@ -162,28 +162,8 @@\n %0A%09%7D%0A\n-%09gelo(pen, dist*0.5)\n %0A%7D%0A%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-17-45",
+            "content": "@@ -156,16 +156,18 @@\n ft(75)%0A%09\n+%7D%0A\n %09gelo(pe\n@@ -179,19 +179,16 @@\n st*0.5)%0A\n-%09%7D%0A\n %7D%0A%0Afunc \n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-21-08",
+            "content": "@@ -140,16 +140,31 @@\n (-dist)%0A\n+%09%09pen.Left(75)%0A\n %09%09gelo(p\n@@ -177,31 +177,16 @@\n st*0.5)%0A\n-%09%09pen.Left(75)%0A\n %09%7D%0A%7D%0A%0Afu\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-21-23",
+            "content": "@@ -124,16 +124,34 @@\n dist)%0A%09%09\n+pen.Walk(-dist)%0A%09%09\n gelo(pen\n@@ -160,34 +160,16 @@\n dist*0.5\n-)%0A%09%09pen.Walk(-dist\n )%0A%09%09pen.\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-21-35",
+            "content": "@@ -122,31 +122,16 @@\n k(dist)%0A\n-%09%09pen.Left(30)%0A\n %09%09gelo(p\n@@ -148,64 +148,8 @@\n .5)%0A\n-%0A%09%09pen.Right(60)%0A%09%09gelo(pen, dist*0.5)%0A%0A%09%09pen.Left(30)%0A%0A\n %09%09pe\n@@ -174,17 +174,17 @@\n n.Left(7\n-2\n+5\n )%0A%09%7D%0A%7D%0A%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-30-26",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-2\n+1\n 0 %7B%0A%09%09re\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-15_22-30-39",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-3\n+2\n 0 %7B%0A%09%09re\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-15_22-30-51",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-4\n+3\n 0 %7B%0A%09%09re\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-15_22-31-01",
+            "content": "@@ -160,16 +160,71 @@\n t*0.5)%0A%0A\n+%09%09pen.Right(60)%0A%09%09gelo(pen, dist*0.5)%0A%0A%09%09pen.Left(30)%0A%0A\n %09%09pen.Wa\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-15_22-33-38",
+            "content": "@@ -143,27 +143,30 @@\n )%0A%09%09\n-pen.Walk(-dist)%0A%09%7D%0A\n+gelo(pen, dist*0.5)%0A%0A%09\n %09pen\n@@ -175,34 +175,32 @@\n alk(\n+-\n dist)%0A%09\n-gelo(pen, dist*0.5)\n+%09pen.Left(72)%0A%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-15_22-34-15",
+            "content": "@@ -133,18 +133,18 @@\n en.Left(\n-75\n+30\n )%0A%09%09pen.\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-15_22-34-31",
+            "content": "@@ -118,24 +118,39 @@\n .Walk(dist)%0A\n+%09%09pen.Left(75)%0A\n %09%09pen.Walk(-\n@@ -160,24 +160,25 @@\n t)%0A%09\n+%7D%0A\n %09pen.\n-Left(75)%0A%09%7D\n+Walk(dist)\n %0A%09ge\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-15_22-36-44",
+            "content": "@@ -158,32 +158,16 @@\n (75)%0A%09%7D%0A\n-%09pen.Walk(dist)%0A\n %09gelo(pe\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-36-55",
+            "content": "@@ -109,30 +109,8 @@\n 5 %7B%0A\n-%09%09gelo(pen, dist*0.5)%0A\n %09%09pe\n@@ -158,16 +158,53 @@\n (75)%0A%09%7D%0A\n+%09pen.Walk(dist)%0A%09gelo(pen, dist*0.5)%0A\n %7D%0A%0Afunc \n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-15_22-37-45",
+            "content": "@@ -105,16 +105,38 @@\n nge 5 %7B%0A\n+%09%09gelo(pen, dist*0.5)%0A\n %09%09pen.Wa\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-38-00",
+            "content": "@@ -126,30 +126,8 @@\n st)%0A\n-%09%09gelo(pen, dist*0.5)%0A\n %09%09pe\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-15_22-38-18",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-3\n+4\n 0 %7B%0A%09%09re\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_22-38-35",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-4\n+3\n 0 %7B%0A%09%09re\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-16_14-04-54",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-6\n+4\n 0 %7B%0A%09%09re\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-16_14-05-03",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-7\n+6\n 0 %7B%0A%09%09re\n@@ -180,33 +180,16 @@\n (75)%0A%09%7D%0A\n-%09pen.Walk(-dist)%0A\n %7D%0A%0Afunc \n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-16_14-11-16",
+            "content": "@@ -120,9 +120,8 @@\n alk(\n--\n dist\n@@ -159,9 +159,9 @@\n alk(\n-+\n+-\n dist\n@@ -180,16 +180,33 @@\n (75)%0A%09%7D%0A\n+%09pen.Walk(-dist)%0A\n %7D%0A%0Afunc \n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-11-45",
+            "content": "@@ -119,24 +119,46 @@\n Walk(-dist)%0A\n+%09%09gelo(pen, dist*0.5)%0A\n %09%09pen.Walk(+\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-16_14-11-56",
+            "content": "@@ -127,30 +127,8 @@\n st)%0A\n-%09%09gelo(pen, dist*0.5)%0A\n %09%09pe\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-16_14-12-46",
+            "content": "@@ -155,42 +155,18 @@\n pen.\n-Up()%0A%09%09pen.Walk(+dist)%0A%09%09pen.Down(\n+Walk(+dist\n )%0A%09%09\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-16_14-14-26",
+            "content": "@@ -119,24 +119,46 @@\n Walk(-dist)%0A\n+%09%09gelo(pen, dist*0.5)%0A\n %09%09pen.Up()%0A%09\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-16_14-14-42",
+            "content": "@@ -156,30 +156,8 @@\n st)%0A\n-%09%09gelo(pen, dist*0.5)%0A\n %09%09pe\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-15-01",
+            "content": "@@ -127,30 +127,8 @@\n st)%0A\n-%09%09gelo(pen, dist*0.5)%0A\n %09%09pe\n@@ -148,24 +148,46 @@\n Walk(+dist)%0A\n+%09%09gelo(pen, dist*0.5)%0A\n %09%09pen.Down()\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-16_14-15-36",
+            "content": "@@ -116,16 +116,17 @@\n en.Walk(\n+-\n dist)%0A%09%09\n@@ -145,16 +145,27 @@\n st*0.5)%0A\n+%09%09pen.Up()%0A\n %09%09pen.Wa\n@@ -167,23 +167,36 @@\n en.Walk(\n--\n++\n dist)%0A\n+%09%09pen.Down()%0A\n %09%09pen.Le\n@@ -205,17 +205,16 @@\n (75)%0A%09%7D%0A\n-%0A\n %7D%0A%0Afunc \n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-16_14-18-18",
+            "content": "@@ -109,23 +109,8 @@\n 5 %7B%0A\n-%09%09pen.Left(75)%0A\n %09%09pe\n@@ -162,16 +162,31 @@\n (-dist)%0A\n+%09%09pen.Left(75)%0A\n %09%7D%0A%0A%7D%0A%0Af\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-21-42",
+            "content": "@@ -105,16 +105,31 @@\n nge 5 %7B%0A\n+%09%09pen.Left(75)%0A\n %09%09pen.Wa\n@@ -177,31 +177,16 @@\n (-dist)%0A\n-%09%09pen.Left(75)%0A\n %09%7D%0A%0A%7D%0A%0Af\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-22-29",
+            "content": "@@ -148,19 +148,8 @@\n .5)%0A\n-%09%09pen.Up()%0A\n %09%09pe\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-23-55",
+            "content": "@@ -109,21 +109,8 @@\n 5 %7B%0A\n-%09%09pen.Down()%0A\n %09%09pe\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-16_14-24-08",
+            "content": "@@ -105,16 +105,29 @@\n nge 5 %7B%0A\n+%09%09pen.Down()%0A\n %09%09pen.Wa\n@@ -157,16 +157,27 @@\n st*0.5)%0A\n+%09%09pen.Up()%0A\n %09%09pen.Wa\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-04-16_14-24-46",
+            "content": "@@ -105,10 +105,9 @@\n nge \n-10\n+5\n  %7B%0A%09\n@@ -118,24 +118,46 @@\n .Walk(dist)%0A\n+%09%09gelo(pen, dist*0.5)%0A\n %09%09pen.Walk(-\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-27-05",
+            "content": "@@ -153,17 +153,17 @@\n n.Left(7\n-2\n+5\n )%0A%09%7D%0A%0A%7D%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-16_14-27-31",
+            "content": "@@ -127,30 +127,8 @@\n st)%0A\n-%09%09gelo(pen, dist*0.5)%0A\n %09%09pe\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-16_14-27-36",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-3\n+7\n 0 %7B%0A%09%09re\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-27-50",
+            "content": "@@ -142,17 +142,17 @@\n  dist*0.\n-3\n+5\n )%0A%09%09pen.\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-28-07",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-1\n+3\n 0 %7B%0A%09%09re\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-28-13",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-5\n+1\n 0 %7B%0A%09%09re\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-28-20",
+            "content": "@@ -74,16 +74,17 @@\n dist %3C 5\n+0\n  %7B%0A%09%09ret\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-28-26",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-2\n+5\n  %7B%0A%09%09ret\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-28-39",
+            "content": "@@ -310,10 +310,10 @@\n en, \n-20\n+15\n 0)%0A%09\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-29-04",
+            "content": "@@ -141,17 +141,17 @@\n  dist*0.\n-4\n+3\n )%0A%09%09pen.\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-29-20",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-4\n+2\n  %7B%0A%09%09ret\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-29-34",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-6\n+4\n  %7B%0A%09%09ret\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-29-39",
+            "content": "@@ -220,24 +220,26 @@\n (600, 500)%0A%09\n+//\n pen.SetLineW\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-29-54",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-5\n+6\n  %7B%0A%09%09ret\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-30-23",
+            "content": "@@ -142,17 +142,16 @@\n dist*0.4\n-5\n )%0A%09%09pen.\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-30-37",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-6\n+5\n  %7B%0A%09%09ret\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-30-46",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-7\n+6\n  %7B%0A%09%09ret\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-30-58",
+            "content": "@@ -77,9 +77,9 @@\n t %3C \n-8\n+7\n  %7B%0A%09\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-31-06",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-9\n+8\n  %7B%0A%09%09ret\n@@ -100,17 +100,18 @@\n r range \n-5\n+10\n  %7B%0A%09%09pen\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-31-21",
+            "content": "@@ -141,16 +141,17 @@\n dist*0.4\n+5\n )%0A%09%09pen.\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-31-46",
+            "content": "@@ -140,17 +140,17 @@\n  dist*0.\n-2\n+4\n )%0A%09%09pen.\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-31-55",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-4\n+9\n  %7B%0A%09%09ret\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-32-04",
+            "content": "@@ -140,17 +140,17 @@\n  dist*0.\n-3\n+2\n )%0A%09%09pen.\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-32-18",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-2\n+4\n  %7B%0A%09%09ret\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-32-37",
+            "content": "@@ -77,9 +77,9 @@\n t %3C \n-1\n+2\n  %7B%0A%09\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-32-48",
+            "content": "@@ -73,17 +73,17 @@\n  dist %3C \n-0\n+1\n  %7B%0A%09%09ret\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-33-11",
+            "content": "@@ -78,10 +78,8 @@\n  %3C 0\n-.5\n  %7B%0A%09\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-33-36",
+            "content": "@@ -75,17 +75,17 @@\n ist %3C 0.\n-2\n+5\n  %7B%0A%09%09ret\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-33-45",
+            "content": "@@ -31,25 +31,20 @@\n )%0A%0Afunc \n-quadrados\n+gelo\n (pen *Pe\n@@ -77,10 +77,11 @@\n t %3C \n-1\n 0\n+.2\n  %7B%0A%09\n@@ -96,41 +96,62 @@\n %09%7D%0A%09\n-pen.Walk(dist / 2)%0A%09pen.Left(90\n+for range 5 %7B%0A%09%09pen.Walk(dist)%0A%09%09gelo(pen, dist*0.3\n )%0A\n+%09\n %09pen\n@@ -160,68 +160,34 @@\n alk(\n+-\n dist\n- / 2)%0A%09for range 4 %7B%0A%09%09pen.Left(90)%0A%09%09pen.Walk(dist\n+)%0A%09%09pen.Left(72\n )%0A%09%7D%0A\n+%0A\n %7D%0A%0Af\n@@ -229,10 +229,8 @@\n 0)%0A%09\n-//\n pen.\n@@ -295,25 +295,20 @@\n , 275)%0A%09\n-quadrados\n+gelo\n (pen, 20\n@@ -328,17 +328,12 @@\n NG(%22\n-quadrados\n+gelo\n .png\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-39-29",
+            "content": "@@ -99,18 +99,8 @@\n %0A%09%7D%0A\n-%09pen.Up()%0A\n %09pen\n@@ -168,21 +168,8 @@\n 4 %7B%0A\n-%09%09pen.Down()%0A\n %09%09pe\n@@ -200,35 +200,8 @@\n st)%0A\n-%09%09quadrados(pen, dist*0.5)%0A\n %09%7D%0A%7D\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_14-41-15",
+            "content": "@@ -219,16 +219,43 @@\n k(dist)%0A\n+%09%09quadrados(pen, dist*0.5)%0A\n %09%7D%0A%7D%0A%0Afu\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-16_14-41-43",
+            "content": "@@ -104,29 +104,130 @@\n pen.\n-DrawRect(dist, \n+Up()%0A%09pen.Walk(dist / 2)%0A%09pen.Left(90)%0A%09pen.Walk(dist / 2)%0A%09for range 4 %7B%0A%09%09pen.Down()%0A%09%09pen.Left(90)%0A%09%09pen.Walk(\n dist)%0A\n+%09%7D%0A\n %7D%0A%0Af\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-04-16_14-43-40",
+            "content": "@@ -98,51 +98,8 @@\n n%0A%09%7D\n-%0A%0A%09pen.DrawRect(dist, dist)%0A%09pen.Walk(dist)\n %0A%09pe\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-16_14-50-45",
+            "content": "@@ -101,23 +101,33 @@\n %7D%0A%0A%09\n-for range 4 %7B%0A%09\n+pen.DrawRect(dist, dist)%0A\n %09pen\n@@ -142,25 +142,33 @@\n st)%0A\n-%09\n %09pen.\n-Left(90)%0A%09%7D\n+DrawRect(dist, dist)\n %0A%7D%0A%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-16_14-53-10",
+            "content": "@@ -101,99 +101,21 @@\n %7D%0A%0A%09\n-pen.Up()%0A%09pen.Walk(dist / 2)%0A%09pen.Left(90)%0A%09pen.Walk(dist / 2)%0A%0A%09for range 4 %7B%0A%09%09pen.Down()\n+for range 4 %7B\n %0A%09%09p\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-16_14-55-55",
+            "content": "@@ -164,33 +164,71 @@\n  2)%0A\n-%09pen.DrawRect(dist, dist)\n+%0A%09for range 4 %7B%0A%09%09pen.Down()%0A%09%09pen.Walk(dist)%0A%09%09pen.Left(90)%0A%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-16_18-00-08",
+            "content": "@@ -96,16 +96,80 @@\n urn%0A%09%7D%0A%0A\n+%09pen.Up()%0A%09pen.Walk(dist / 2)%0A%09pen.Left(90)%0A%09pen.Walk(dist / 2)%0A\n %09pen.Dra\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-16_18-00-22",
+            "content": "@@ -230,14 +230,14 @@\n ion(\n-2\n+3\n 00, \n-1\n+2\n 75)%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-16_18-01-15",
+            "content": "@@ -126,24 +126,8 @@\n st)%0A\n-%09pen.Walk(dist)%0A\n %7D%0A%0Af\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-16_18-01-45",
+            "content": "@@ -140,78 +140,9 @@\n dist\n- / 2)%0A%09pen.Left(90)%0A%09pen.Walk(dist / 2)%0A%09pen.DrawRect(dist/2, dist/2)%0A\n+)\n %0A%7D%0A%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-16_18-04-01",
+            "content": "@@ -135,25 +135,25 @@\n Walk(dist / \n-3\n+2\n )%0A%09pen.Left(\n@@ -177,9 +177,9 @@\n t / \n-3\n+2\n )%0A%09p\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_18-04-23",
+            "content": "@@ -135,25 +135,25 @@\n Walk(dist / \n-4\n+3\n )%0A%09pen.Left(\n@@ -173,17 +173,17 @@\n (dist / \n-4\n+3\n )%0A%09pen.D\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_18-04-31",
+            "content": "@@ -95,16 +95,17 @@\n turn%0A%09%7D%0A\n+%0A\n %09pen.Dra\n@@ -126,24 +126,8 @@\n st)%0A\n-%09for range 4 %7B%0A%09\n %09pen\n@@ -138,25 +138,24 @@\n k(dist / 4)%0A\n-%09\n %09pen.Left(90\n@@ -156,17 +156,16 @@\n eft(90)%0A\n-%09\n %09pen.Wal\n@@ -176,17 +176,16 @@\n st / 4)%0A\n-%09\n %09pen.Dra\n@@ -206,18 +206,16 @@\n dist/2)%0A\n-%09%7D\n %0A%7D%0A%0Afunc\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_18-06-20",
+            "content": "@@ -95,16 +95,42 @@\n turn%0A%09%7D%0A\n+%09pen.DrawRect(dist, dist)%0A\n %09for ran\n@@ -212,22 +212,26 @@\n ect(dist\n+/2\n , dist\n+/2\n )%0A%09%7D%0A%7D%0A%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-16_18-09-47",
+            "content": "@@ -95,17 +95,32 @@\n turn%0A%09%7D%0A\n-%0A\n+%09for range 4 %7B%0A%09\n %09pen.Wal\n@@ -128,19 +128,20 @@\n (dist / \n-2\n+4\n )%0A\n+%09\n %09pen.Lef\n@@ -142,24 +142,25 @@\n en.Left(90)%0A\n+%09\n %09pen.Walk(di\n@@ -168,53 +168,32 @@\n t / \n-2)%0A%0A%09for range 4 %7B%0A%09%09pen.Left(90)%0A%09%09pen.Walk(\n+4)%0A%09%09pen.DrawRect(dist, \n dist\n@@ -305,14 +305,14 @@\n ion(\n-3\n+2\n 00, \n-2\n+1\n 75)%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-16_18-12-26",
+            "content": "@@ -202,35 +202,8 @@\n st)%0A\n-%09%09quadrados(pen, dist*0.5)%0A\n %09%7D%0A%7D\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-04-16_18-15-54",
+            "content": "@@ -78,17 +78,17 @@\n  dist %3C \n-5\n+1\n 0 %7B%0A%09%09re\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-16_18-16-03",
+            "content": "@@ -99,30 +99,8 @@\n %0A%09%7D%0A\n-%09pen.SetRGB(255, 0, 0)\n %0A%09pe\n@@ -170,30 +170,8 @@\n 4 %7B%0A\n-%09%09pen.SetRGB(0, 0, 0)%0A\n %09%09pe\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-16_18-20-36",
+            "content": "@@ -104,27 +104,24 @@\n pen.\n-DrawRect(dist, dist\n+SetRGB(255, 0, 0\n )%0A%09p\n@@ -176,37 +176,107 @@\n  2)%0A\n-%09pen.DrawRect(dist/3, dist/3)\n+%0A%09for range 4 %7B%0A%09%09pen.SetRGB(0, 0, 0)%0A%09%09pen.Left(90)%0A%09%09pen.Walk(dist)%0A%09%09quadrados(pen, dist*0.5)%0A%09%7D\n %0A%7D%0A%0A\n@@ -380,14 +380,14 @@\n ion(\n-2\n+3\n 00, \n-1\n+2\n 75)%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-16_18-40-04",
+            "content": "@@ -96,29 +96,39 @@\n urn%0A%09%7D%0A%09pen.\n-Walk(\n+DrawRect(dist, \n dist)%0A%09pen.W\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-16_18-40-49",
+            "content": "@@ -303,14 +303,14 @@\n ion(\n-4\n+2\n 00, \n-3\n+1\n 75)%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-16_18-40-58",
+            "content": "@@ -100,23 +100,23 @@\n %09%7D%0A%09\n-for range 4 %7B%0A%09\n+pen.Walk(dist)%0A\n %09pen\n@@ -125,19 +125,22 @@\n alk(dist\n+ / 2\n )%0A\n-%09\n %09pen.Lef\n@@ -146,17 +146,64 @@\n ft(90)%0A%09\n-%7D\n+pen.Walk(dist / 2)%0A%09pen.DrawRect(dist/3, dist/3)\n %0A%7D%0A%0Afunc\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-16_18-44-49",
+            "content": "@@ -120,34 +120,33 @@\n pen.\n-Left(90)%0A%09%09pen.Walk(dist)%0A\n+Walk(dist)%0A%09%09pen.Left(90)\n %0A%09%7D%0A\n@@ -253,14 +253,14 @@\n ion(\n-3\n+4\n 00, \n-2\n+3\n 75)%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-16_18-59-10",
+            "content": "@@ -254,14 +254,14 @@\n ion(\n-2\n+3\n 00, \n-1\n+2\n 75)%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-16_18-59-24",
+            "content": "@@ -250,17 +250,17 @@\n osition(\n-4\n+2\n 00, 175)\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-16_18-59-46",
+            "content": "@@ -95,17 +95,16 @@\n turn%0A%09%7D%0A\n-%0A\n %09for ran\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-16_19-09-03",
+            "content": "@@ -101,157 +101,38 @@\n %7D%0A%0A%09\n-pen.Walk(dist)%0A%09pen.Walk(dist / 2)%0A%09pen.Left(90)%0A%09pen.Walk(dist / 2)%0A%09pen.DrawRect(dist/2, dist/2)%0A%09pen.Right(90)%0A%09pen.Walk(dist / 2)%0A\n+for range 4 %7B%0A%09\n %09pen.\n-Righ\n+Lef\n t(90)%0A\n+%09\n %09pen\n@@ -145,28 +145,13 @@\n dist\n- / 2)%0A%09pen.Left(90)%0A\n+)%0A%0A%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-17_00-30-48",
+            "content": "@@ -390,17 +390,17 @@\n on(400, \n-2\n+1\n 75)%0A%09qua\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-17_00-31-00",
+            "content": "@@ -394,9 +394,9 @@\n 00, \n-3\n+2\n 75)%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-17_00-31-11",
+            "content": "@@ -390,19 +390,19 @@\n on(400, \n-400\n+375\n )%0A%09quadr\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-17_00-31-48",
+            "content": "@@ -188,24 +188,29 @@\n dist\n+/2\n , dist\n+/2\n )%0A%09pen.\n-Lef\n+Righ\n t(90\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-17_00-33-02",
+            "content": "@@ -188,18 +188,14 @@\n dist\n-/3\n , dist\n-/3\n )%0A%09p\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-17_00-33-15",
+            "content": "@@ -31,23 +31,25 @@\n )%0A%0Afunc \n-espiral\n+quadrados\n (pen *Pe\n@@ -79,16 +79,17 @@\n dist %3C 5\n+0\n  %7B%0A%09%09ret\n@@ -95,16 +95,17 @@\n turn%0A%09%7D%0A\n+%0A\n %09pen.Wal\n@@ -121,38 +121,168 @@\n pen.\n-Right(90)%0A%09espiral(pen, dist-5\n+Walk(dist / 2)%0A%09pen.Left(90)%0A%09pen.Walk(dist / 2)%0A%09pen.DrawRect(dist/3, dist/3)%0A%09pen.Left(90)%0A%09pen.Walk(dist / 2)%0A%09pen.Right(90)%0A%09pen.Walk(dist / 2)%0A%09pen.Left(90\n )%0A%0A%7D\n@@ -395,23 +395,25 @@\n , 400)%0A%09\n-espiral\n+quadrados\n (pen, 20\n@@ -433,15 +433,17 @@\n NG(%22\n-espiral\n+quadrados\n .png\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-23_21-49-25",
+            "content": "@@ -254,9 +254,9 @@\n ion(\n-2\n+4\n 00, \n@@ -274,17 +274,17 @@\n al(pen, \n-4\n+2\n 00)%0A%09pen\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-23_21-50-00",
+            "content": "@@ -254,9 +254,9 @@\n ion(\n-1\n+2\n 00, \n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-23_21-50-08",
+            "content": "@@ -259,9 +259,9 @@\n 00, \n-3\n+4\n 00)%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-23_21-50-19",
+            "content": "@@ -251,25 +251,25 @@\n sition(100, \n-5\n+3\n 00)%0A%09espiral\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-23_21-50-23",
+            "content": "@@ -259,10 +259,10 @@\n 00, \n-4\n 5\n+0\n 0)%0A%09\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-23_21-50-32",
+            "content": "@@ -27,21 +27,8 @@\n mt%22%0A\n-%09%22math/rand%22%0A\n )%0A%0Af\n@@ -96,122 +96,8 @@\n %0A%09%7D%0A\n-%0A%09r := float64(rand.Intn(255))%0A%09g := float64(rand.Intn(255))%0A%09b := float64(rand.Intn(255))%0A%0A%09pen.SetRGB(r, g, b)%0A%0A\n %09pen\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-23_22-00-43",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc espiral(pen *Pen, dist float64) {\n\tif dist < 5 {\n\t\treturn\n\t}\n\n\tr := float64(rand.Intn(255))\n\tg := float64(rand.Intn(255))\n\tb := float64(rand.Intn(255))\n\n\tpen.SetRGB(r, g, b)\n\n\tpen.Walk(dist)\n\tpen.Right(90)\n\tespiral(pen, dist-5)\n\n}\n\nfunc main() {\n\tpen := NewPen(600, 500)\n\t//pen.SetLineWidth(0.7)\n\tpen.SetHeading(90)\n\tpen.SetPosition(100, 450)\n\tespiral(pen, 400)\n\tpen.SavePNG(\"espiral.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "33"
         }
     ]
 }
