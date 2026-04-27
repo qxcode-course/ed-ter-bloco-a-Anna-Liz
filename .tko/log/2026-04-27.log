@@ -1,0 +1,7 @@
+2026-04-27 00:58:44, MOVE, v:1, k:ed@bettersearch, mode:PICK
+2026-04-27 00:58:49, EXEC, v:1, k:ed@bettersearch, mode:FULL, rate:72, size:48
+2026-04-27 00:59:20, EXEC, v:1, k:ed@bettersearch, mode:FULL, rate:72, size:48
+2026-04-27 00:59:31, EXEC, v:1, k:ed@bettersearch, mode:FULL, rate:100, size:48
+2026-04-27 00:59:36, MOVE, v:1, k:ed@bettersearch, mode:BACK
+2026-04-27 01:00:15, MOVE, v:1, k:ed@multiset, mode:DOWN
+2026-04-27 01:00:23, MOVE, v:1, k:ed@multiset, mode:PICK

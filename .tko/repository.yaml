@@ -22,9 +22,10 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@map_set
 - ed@basic
+- ed@vector
 - ed@rec
+- ed@map_set
 flags:
   inbox: inbox
   panel: graph
@@ -32,5 +33,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@fractais_png
-selected_index: 17
+selected: ed@multiset
+selected_index: 23
