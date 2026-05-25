@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-11_18-31-47",
+            "content": "@@ -24,18 +24,16 @@\n %09%22fmt%22%0A%09\n-//\n %22strings\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-11_18-31-54",
+            "content": "@@ -155,17 +155,16 @@\n Print(%22%5B\n- \n %22)%0A%09for \n@@ -257,19 +257,17 @@\n alue, %22%5D\n- %22 \n+%22\n )%0A%09%09%7D el\n@@ -295,13 +295,8 @@\n alue\n-, %22 %22\n )%0A%09%09\n@@ -430,134 +430,18 @@\n  %7B%0A%09\n-if it == nil %7C%7C l.Size() == 0 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09next := it.Next()%0A%0A%09if next == l.End() %7B%0A%09%09next = l.Front()%0A%09%7D%0A%0A%09return next\n+return nil\n %0A%7D%0A%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-11_18-45-01",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t//\"strings\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\tfmt.Print(\"[ \")\n\tfor n := l.Front() ; n != l.End() ; n = n.Next() {\n\t\tif n == sword {\n\t\t\tfmt.Print(\"[\", n.Value, \"] \" )\n\t\t} else {\n\t\t\tfmt.Print(n.Value, \" \")\n\t\t}\n\t}\n\tfmt.Println(\"]\")\n\treturn \"\"\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], it *DNode[int]) *DNode[int] {\n\tif it == nil || l.Size() == 0 {\n\t\treturn nil\n\t}\n\n\tnext := it.Next()\n\n\tif next == l.End() {\n\t\tnext = l.Front()\n\t}\n\n\treturn next\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\tfmt.Scan(&qtd, &chosen)\n\tfmt.Println(qtd, chosen)\n\tl := NewDList[int]()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tl.Erase(Next(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "55"
+        }
+    ]
+}

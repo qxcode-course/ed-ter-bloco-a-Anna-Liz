@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-11_18-48-13",
+            "content": "@@ -41,708 +41,35 @@\n     \n-var entrada string%0A    fmt.Scan(&entrada)%0A%0A    texto := %5B%5Drune%7B%7D%0A    cursor := 0%0A%0A    for _, char := range entrada %7B%0A        switch char %7B%0A        case 'R':%0A            fmt.Println()%0A            cursor++%0A        case 'B':%0A            if cursor != 0 %7B%0A                texto = append(texto%5B:cursor%5D, texto%5Bcursor+1:%5D...)%0A                cursor--%0A            %7D%0A        case 'D':%0A            if cursor %3C len(texto) %7B%0A                texto = append(texto%5B:cursor-1%5D, texto%5Bcursor:%5D...)%0A            %7D%0A        case '%3E':%0A            if cursor %3C len(texto) %7B%0A                cursor ++%0A            %7D%0A        case '%3C':%0A            if cursor != 0 %7B%0A                cursor --%0A            %7D%0A        %7D%0A        %0A    %7D\n+fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-11_19-22-19",
+            "content": "@@ -718,87 +718,8 @@\n   %7D%0A\n-        default: %0A            texto = append(texto, char)%0A            cursor++%0A\n     \n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-05-11_19-25-28",
+            "content": "@@ -816,33 +816,8 @@\n    %0A\n-        fmt.Print(texto)%0A\n     \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-05-11_19-25-55",
+            "content": "@@ -825,229 +825,22 @@\n    f\n-or i := 0; i %3C len(texto); i++ %7B%0A            if i == cursor %7B%0A                fmt.Print(%22%7C%22)%0A            %7D%0A%0A            if i %3C len(texto) %7B%0A                fmt.Print(texto%5Bi%5D)%0A            %7D%0A        %7D%0A%0A        fmt.Println(\n+mt.Print(texto\n )%0A  \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-05-11_19-29-04",
+            "content": "@@ -336,10 +336,8 @@\n rsor\n--1\n %5D, t\n@@ -347,16 +347,18 @@\n o%5Bcursor\n++1\n :%5D...)%0A \n@@ -486,32 +486,34 @@\n nd(texto%5B:cursor\n+-1\n %5D, texto%5Bcursor+\n@@ -503,34 +503,32 @@\n 1%5D, texto%5Bcursor\n-+1\n :%5D...)%0A         \n@@ -990,16 +990,9 @@\n rint\n-f(%22%25c%22, \n+(\n text\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-05-11_19-32-02",
+            "content": "@@ -807,16 +807,21 @@\n   %7D%0A\n+        \n %0A    \n-%7D%0A%0A\n     \n@@ -1055,15 +1055,12 @@\n n()%0A    \n-    \n+%7D\n %0A%7D%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-05-11_19-33-00",
+            "content": "@@ -853,24 +853,28 @@\n + %7B%0A        \n+    \n if i == curs\n@@ -876,19 +876,22 @@\n  cursor \n- \n %7B%0A\n+    \n         \n@@ -913,27 +913,35 @@\n %7C%22)%0A        \n-%7D%0A%0A\n+    %7D%0A%0A    \n         if i\n@@ -960,32 +960,36 @@\n ) %7B%0A            \n+    \n fmt.Printf(%22%25c%22,\n@@ -1003,26 +1003,24 @@\n i%5D)%0A        \n-%7D%0A\n     %7D%0A    if\n@@ -1021,33 +1021,14 @@\n     \n-if cursor == len(texto) %7B\n+    %7D%0A\n %0A   \n@@ -1045,38 +1045,20 @@\n rint\n-(%22%7C%22\n+ln(\n )%0A    \n-%7D%0A%0A\n     \n-fmt.Println()%0A\n %0A%7D%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-05-11_19-38-36",
+            "content": "@@ -210,34 +210,20 @@\n     \n-texto = append(texto, '%5Cn'\n+fmt.Println(\n )%0A  \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-05-11_19-41-32",
+            "content": "@@ -782,61 +782,14 @@\n exto\n-%5B:cursor%5D, append(%5B%5Drune%7Bchar%7D, texto%5Bcursor:%5D...)...\n+, char\n )%0A  \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-05-11_19-50-44",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var entrada string\n    fmt.Scan(&entrada)\n\n    texto := []rune{}\n    cursor := 0\n\n    for _, char := range entrada {\n        switch char {\n        case 'R':\n            texto = append(texto, '\\n')\n            cursor++\n        case 'B':\n            if cursor != 0 {\n                texto = append(texto[:cursor-1], texto[cursor:]...)\n                cursor--\n            }\n        case 'D':\n            if cursor < len(texto) {\n                texto = append(texto[:cursor], texto[cursor+1:]...)\n            }\n        case '>':\n            if cursor < len(texto) {\n                cursor ++\n            }\n        case '<':\n            if cursor != 0 {\n                cursor --\n            }\n        default: \n            texto = append(texto[:cursor], append([]rune{char}, texto[cursor:]...)...)\n            cursor++\n        }\n\n    }\n\n    for i := 0; i < len(texto); i++ {\n        if i == cursor  {\n            fmt.Print(\"|\")\n        }\n\n        if i < len(texto) {\n            fmt.Printf(\"%c\", texto[i])\n        }\n    }\n    if cursor == len(texto) {\n        fmt.Print(\"|\")\n    }\n\n    fmt.Println()\n\n}\n",
+            "lines": "54"
+        }
+    ]
+}
