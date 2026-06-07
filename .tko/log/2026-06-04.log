@@ -1,0 +1,13 @@
+2026-06-04 18:21:36, MOVE, v:1, k:ed@magicsearch, mode:DOWN
+2026-06-04 18:21:37, MOVE, v:1, k:ed@magicsearch, mode:PICK
+2026-06-04 18:21:39, MOVE, v:1, k:ed@magicsearch, mode:BACK
+2026-06-04 18:21:56, MOVE, v:1, k:ed@bufferring, mode:PICK
+2026-06-04 18:21:36, MOVE, v:1, k:ed@magicsearch, mode:EDIT
+2026-06-04 18:21:36, MOVE, v:1, k:ed@magicsearch, mode:EDIT
+2026-06-04 18:21:36, MOVE, v:1, k:ed@magicsearch, mode:EDIT
+2026-06-04 18:25:52, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:0
+2026-06-04 18:29:52, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-06-04 18:30:33, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-06-04 18:44:04, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-06-04 18:50:24, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:0, size:138
+2026-06-04 18:50:28, MOVE, v:1, k:ed@bufferring, mode:BACK

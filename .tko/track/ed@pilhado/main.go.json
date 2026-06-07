@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-30_16-16-53",
+            "content": "@@ -440,35 +440,50 @@\n  int\n-, visitados map%5BPos%5Dbool) %7B\n+) %7B%0A%09nl := len(grid)%0A%09nc := len(grid%5B0%5D)%0A%09\n %0A%09po\n@@ -558,64 +558,34 @@\n %0A%09%7D%0A\n-%09if visitados%5Bpos%5D %7B%0A%09%09return%0A%09%7D%0A%0A%09visitados\n+%0A%09grid%5Bpos.l%5D\n %5Bpos\n+.c\n %5D = \n-true\n+'o'\n %0A%0A%09b\n@@ -602,21 +602,11 @@\n l, c\n+ \n -1\n-, visitados\n )%0A%09b\n@@ -623,21 +623,11 @@\n l, c\n+ \n +1\n-, visitados\n )%0A%09b\n@@ -641,24 +641,14 @@\n d, l\n+ \n -1, c\n-, visitados\n )%0A%09b\n@@ -662,521 +662,14 @@\n d, l\n+ \n +1, c\n-, visitados)%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09scanner.Scan()%0A%09line := scanner.Text()%0A%09var nl, nc, lfire, cfire int%0A%09fmt.Sscanf(line, %22%25d %25d %25d %25d%22, &nl, &nc, &lfire, &cfire)%0A%0A%09grid := make(%5B%5D%5B%5Drune, 0, nl)%0A%09for range nl %7B%0A%09%09scanner.Scan()%0A%09%09line := %5B%5Drune(scanner.Text())%0A%09%09grid = append(grid, line)%0A%09%7D%0A%09visitados := make(map%5BPos%5Dbool, 0)%0A%09burn(grid, lfire, cfire, visitados)%0A%09showGrid(grid)%0A%7D%0A%0Afunc showGrid(grid %5B%5D%5B%5Drune) %7B%0A%09for _, line := range grid %7B%0A%09%09fmt.Println(string(line))%0A%09%7D\n+)\n %0A%7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-05-30_16-38-14",
+            "content": "@@ -1112,67 +1112,8 @@\n os)%0A\n-%09for pos := range visitados%7B%0A%09%09grid%5Bpos.l%5D%5Bpos.c%5D = 'o'%0A%09%7D%0A\n %09sho\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-05-30_16-39-18",
+            "content": "@@ -1092,19 +1092,15 @@\n fire\n--1\n , cfire\n--1\n , vi\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-05-30_16-47-20",
+            "content": "@@ -68,24 +68,133 @@\n l, c int%0A%7D%0A%0A\n+func getNeig(p Pos) %5B%5DPos %7B%0A%09return %5B%5DPos%7B%7Bp.l, p.c - 1%7D, %7Bp.l - 1, p.c%7D, %7Bp.l, p.c + 1%7D, %7Bp.l + 1, p.c%7D%7D%0A%7D%0A%0A\n func inside(\n@@ -1165,17 +1165,17 @@\n s.c%5D = '\n-.\n+o\n '%0A%09%7D%0A%09sh\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-05-30_16-53-05",
+            "content": "@@ -966,100 +966,8 @@\n  0)%0A\n-%09fmt.Println(%22inicio:%22, lfire-1, cfire-1)%0A%09fmt.Printf(%22char: %25c%5Cn%22, grid%5Blfire-1%5D%5Bcfire-1%5D)%0A\n %09bur\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-05-30_16-54-01",
+            "content": "@@ -76,117 +76,8 @@\n %0A%7D%0A%0A\n-func getNeig(p Pos) %5B%5DPos %7B%0A%09return %5B%5DPos%7B%7Bp.l, p.c - 1%7D, %7Bp.l - 1, p.c%7D, %7Bp.l, p.c + 1%7D, %7Bp.l + 1, p.c%7D%7D%0A%7D%0A%0A\n func\n@@ -300,22 +300,20 @@\n %7D%0A%0Afunc \n-search\n+burn\n (grid%5B%5D%5B\n@@ -323,23 +323,16 @@\n ne, \n-pos, endPos Pos\n+l, c int\n , vi\n@@ -353,22 +353,52 @@\n s%5Dbool) \n-bool %7B\n+%7B%0A%09pos := Pos%7B%0A%09%09l: l, %0A%09%09c: c,%0A%09%7D%0A%09\n %0A%09if !ma\n@@ -413,17 +413,17 @@\n , pos, '\n- \n+#\n ')%7B%0A%09%09re\n@@ -426,27 +426,20 @@\n %09%09return\n- false\n %0A%09%7D%0A\n-%0A\n %09if visi\n@@ -459,22 +459,16 @@\n %09%09return\n- false\n %0A%09%7D%0A%0A%09vi\n@@ -491,212 +491,132 @@\n rue%0A\n-%09if pos == endPos %7B%0A%09%09grid%5Bpos.l%5D%5Bpos.c%5D = '.'%0A%09%09return true%0A%09%7D%0A%0A%09for _, i := range getNeig(pos) %7B%0A%09%09if search(grid, i, endPos, visitados) %7B%0A%09%09%09grid%5Bpos.l%5D%5Bpos.c%5D = '.'%0A%09%09%09return true%0A%09%09%7D%0A%09%7D%0A%09return false\n+%0A%09burn(grid, l, c-1, visitados)%0A%09burn(grid, l, c+1, visitados)%0A%09burn(grid, l-1, c, visitados)%0A%09burn(grid, l+1, c, visitados)\n %0A%7D%0A%0A\n@@ -685,21 +685,20 @@\n Scan()%0A%09\n-nl_nc\n+line\n  := scan\n@@ -719,16 +719,30 @@\n r nl, nc\n+, lfire, cfire\n  int%0A%09fm\n@@ -754,19 +754,24 @@\n anf(\n-nl_nc\n+line\n , %22%25d \n+%25d %25d \n %25d%22,\n@@ -779,16 +779,32 @@\n &nl, &nc\n+, &lfire, &cfire\n )%0A%0A%09grid\n@@ -837,13 +837,8 @@\n %09for\n- i :=\n  ran\n@@ -868,16 +868,14 @@\n )%0A%09%09\n-grid%5Bi%5D \n+line :\n = %5B%5D\n@@ -900,377 +900,315 @@\n ))%0A%09\n-%7D%0A%0A%09// Procura posi%C3%A7%C3%B5es de in%C3%ADcio e endPos e conserta para _%0A%09var startPos, endPos Pos%0A%09for l := range nl %7B%0A%09%09for c := range nc %7B%0A%09%09%09if grid%5Bl%5D%5Bc%5D == 'I' %7B%0A%09%09%09%09grid%5Bl%5D%5Bc%5D = ' '%0A%09%09%09%09startPos = Pos%7Bl, c%7D%0A%09%09%09%7D%0A%09%09%09if grid%5Bl%5D%5Bc%5D == 'F' \n+%09grid = append(grid, line)%0A%09%7D%0A%09visitados := make(map%5BPos%5Dbool, 0)%0A%09fmt.Println(%22inicio:%22, lfire-1, cfire-1)%0A%09fmt.Printf(%22char: %25c%5Cn%22, grid%5Blfire-1%5D%5Bcfire-1%5D)%0A%09burn(grid, lfire-1, cfire-1, visitados)%0A%09for pos := range visitados\n %7B%0A\n-%09%09\n %09%09grid%5B\n-l%5D%5B\n+pos.l%5D%5Bpos.\n c%5D = '\n- '%0A%09%09%09%09endPos = Pos%7Bl, c%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09visitados := make(map%5BPos%5Dbool, 0)%0A%09search(grid, startPos, endPos, visitados)%0A\n+.'%0A%09%7D%0A%09showGrid(grid)%0A%7D%0A%0Afunc showGrid(grid %5B%5D%5B%5Drune) %7B\n %0A%09fo\n@@ -1266,9 +1266,8 @@\n ))%0A%09%7D%0A%7D%0A\n-%0A\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-05-30_17-43-18",
+            "content": "@@ -416,25 +416,24 @@\n  search(grid\n- \n %5B%5D%5B%5Drune, po\n@@ -504,17 +504,16 @@\n os, ' ')\n- \n %7B%0A%09%09retu\n@@ -1478,12 +1478,13 @@\n line))%0A%09%7D%0A%7D%0A\n+%0A\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-05-30_17-43-45",
+            "content": "@@ -970,16 +970,19 @@\n %5D%5B%5Drune,\n+ 0,\n  nl)%0A%09fo\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-30_17-48-04",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc getNeig(p Pos) []Pos {\n\treturn []Pos{{p.l, p.c - 1}, {p.l - 1, p.c}, {p.l, p.c + 1}, {p.l + 1, p.c}}\n}\n\nfunc inside(grid [][]rune, p Pos) bool {\n\treturn !(p.l < 0 || p.l >= len(grid) || p.c < 0 || p.c >= len(grid[0]))\n}\n\nfunc match(grid [][]rune, p Pos, value rune) bool {\n\treturn inside(grid, p) && grid[p.l][p.c] == value\n}\n\nfunc search(grid [][]rune, pos, endPos Pos, visitados map[Pos]bool) bool {\n\tif !match(grid, pos, ' ') {\n\t\treturn false\n\t}\n\n\tif visitados[pos] {\n\t\treturn false\n\t}\n\n\tvisitados[pos] = true\n\tif pos == endPos {\n\t\tgrid[pos.l][pos.c] = '.'\n\t\treturn true\n\t}\n\n\tfor _, i := range getNeig(pos) {\n\t\tif search(grid, i, endPos, visitados) {\n\t\t\tgrid[pos.l][pos.c] = '.'\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tnl_nc := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(nl_nc, \"%d %d\", &nl, &nc)\n\n\tgrid := make([][]rune, nl)\n\tfor i := range nl {\n\t\tscanner.Scan()\n\t\tgrid[i] = []rune(scanner.Text())\n\t}\n\n\t// Procura posi\u00e7\u00f5es de in\u00edcio e endPos e conserta para _\n\tvar startPos, endPos Pos\n\tfor l := range nl {\n\t\tfor c := range nc {\n\t\t\tif grid[l][c] == 'I' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tstartPos = Pos{l, c}\n\t\t\t}\n\t\t\tif grid[l][c] == 'F' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tendPos = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tvisitados := make(map[Pos]bool, 0)\n\tsearch(grid, startPos, endPos, visitados)\n\n\tfor _, line := range grid {\n\t\tfmt.Println(string(line))\n\t}\n}\n",
+            "lines": "83"
+        }
+    ]
+}

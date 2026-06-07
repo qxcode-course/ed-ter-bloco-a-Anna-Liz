@@ -53,7 +53,7 @@ func (b *Deque) grow() {
 	newData := make([]int, newCap)
 
 	for i := 0; i < b.size; i++ {
-		newData[i] = b.data[(b.front + 1) % b.capacity]
+		newData[i] = b.data[(b.front + i) % b.capacity]
 	}
 
 	b.data = newData
@@ -61,7 +61,15 @@ func (b *Deque) grow() {
 	b.capacity = newCap
 }
 
-func (b *Deque) PushBack(value int) {
+func (b* Deque) PushBack(value int) {
+	if b.size == b.capacity {
+		b.grow()
+	}
+	b.data[(b.front + b.size) % b.capacity] = value
+	b.size++
+}
+
+func (b *Deque) PushFront(value int) {
 	if b.size == b.capacity {
 		b.grow()
 	}
@@ -69,6 +77,43 @@ func (b *Deque) PushBack(value int) {
 	b.front = (b.front - 1 + b.capacity) % b.capacity
 	b.data[b.front] = value
 	b.size++
+}
+
+func (b *Deque) PopFront() error {
+	if b.size == 0 {
+		return fmt.Errorf("fail: buffer vazio")
+	}
+	b.size--
+	b.front++
+	return nil
+}
+
+func (b* Deque) PopBack() error {
+	if b.size == 0 {
+		return fmt.Errorf("fail: buffer vazio")
+	}
+	b.size--
+	return nil
+} 
+
+func (b* Deque) Clear() {
+	b.size = 0
+	b.front = 0
+
+}
+
+func (b* Deque) Front() (int, error) {
+	if b.size == 0 {
+		return 0, fmt.Errorf("tem nada")
+	}
+	return b.data[b.front], nil
+}
+
+func (b* Deque) Back() (int, error) {
+	if b.size == 0 {
+		return 0, fmt.Errorf("tem nada")
+	}
+	return b.data[(b.front + b.size - 1) % b.capacity], nil
 }
 
 func main() {
@@ -103,32 +148,32 @@ func main() {
 			 	buf.PushBack(num)
 			}
 		case "push_front":
-			// for _, v := range args[1:] {
-			// 	num, _ := strconv.Atoi(v)
-			// 	buf.PushFront(num)
-			// }
+			for _, v := range args[1:] {
+			 	num, _ := strconv.Atoi(v)
+			 	buf.PushFront(num)
+			}
 		case "pop_back":
-			// if err := buf.PopBack(); err != nil {
-			// 	fmt.Println(err)
-			// }
+			if err := buf.PopBack(); err != nil {
+			 	fmt.Println(err)
+			}
 		case "pop_front":
-			// if err := buf.PopFront(); err != nil {
-			// 	fmt.Println(err)
-			// }
+			if err := buf.PopFront(); err != nil {
+			 	fmt.Println(err)
+			}
 		case "front":
-			// if val, err := buf.Front(); err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(val)
-			// }
+			if val, err := buf.Front(); err != nil {
+			 	fmt.Println(err)
+			} else {
+			 	fmt.Println(val)
+			}
 		case "back":
-			// if val, err := buf.Back(); err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(val)
-			// }
+			if val, err := buf.Back(); err != nil {
+			 	fmt.Println(err)
+			} else {
+			 	fmt.Println(val)
+			}
 		case "clear":
-			// buf.Clear()
+			buf.Clear()
 		case "end":
 			return
 		default:

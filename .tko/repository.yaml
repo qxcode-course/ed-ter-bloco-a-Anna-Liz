@@ -19,15 +19,15 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@list
-- ed@basic
-- ed@dfs
 - ed@map_set
-- ed@bfs
-- ed@backtrack
-- ed@vector
-- ed@rec
 - ed@linear
+- ed@tree
+- ed@backtrack
+- ed@basic
+- ed@rec
+- ed@vector
+- ed@list
+- ed@dfs
 flags:
   inbox: all
   panel: graph
@@ -35,5 +35,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@wordsearch
-selected_index: 43
+selected: ed@bufferring
+selected_index: 60
