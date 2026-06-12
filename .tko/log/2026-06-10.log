@@ -1,0 +1,36 @@
+2026-06-10 17:51:05, MOVE, v:1, k:ed@distancia, mode:DOWN
+2026-06-10 17:51:15, MOVE, v:1, k:ed@distancia, mode:PICK
+2026-06-10 17:53:57, MOVE, v:1, k:ed@distancia, mode:BACK
+2026-06-10 17:54:15, MOVE, v:1, k:ed@permutacoes, mode:DOWN
+2026-06-10 17:54:21, MOVE, v:1, k:ed@permutacoes, mode:PICK
+2026-06-10 17:51:05, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-06-10 17:51:05, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-06-10 17:51:05, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-06-10 17:51:05, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-06-10 17:54:15, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-10 17:54:15, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-10 17:54:15, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-10 17:54:15, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-10 18:01:59, MOVE, v:1, k:ed@permutacoes, mode:BACK
+2026-06-10 18:06:37, MOVE, v:1, k:ed@permutacoes, mode:PICK
+2026-06-10 18:08:11, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-10 18:11:11, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:8
+2026-06-10 18:13:32, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-10 18:18:37, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-10 18:25:10, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-10 18:26:57, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-10 18:35:28, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-10 18:37:16, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:18
+2026-06-10 18:37:22, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:18
+2026-06-10 18:37:21, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-10 18:43:50, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:19
+2026-06-10 18:44:35, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:40, size:18
+2026-06-10 18:44:27, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-10 18:47:03, MOVE, v:1, k:ed@permutacoes, mode:BACK
+2026-06-10 18:47:43, MOVE, v:1, k:ed@sudoku, mode:DOWN
+2026-06-10 18:47:45, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-06-10 18:47:43, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-10 18:47:43, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-10 18:47:43, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-10 18:47:43, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-10 18:51:42, MOVE, v:1, k:ed@sudoku, mode:BACK

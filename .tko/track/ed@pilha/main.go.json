@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-07_16-56-10",
+            "content": "@@ -436,62 +436,8 @@\n %0A%7D%0A%0A\n-func (s *Stack%5BT%5D) Size() int%7B%0A%09return len(s.data)%0A%7D%0A%0A\n func\n@@ -479,16 +479,9 @@\n ata%5B\n-s.Size()\n+0\n %5D = \n@@ -1223,24 +1223,27 @@\n  %22size%22:%0A%09%09%09\n+// \n fmt.Println(\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-06-07_17-01-25",
+            "content": "@@ -532,32 +532,26 @@\n data\n- = append(s.data,\n+%5Bs.Size()%5D =\n  value\n-)\n %0A%7D%0A%0A\n@@ -583,29 +583,8 @@\n ) %7B%0A\n-%09s.data = s.data%5B:0%5D%0A\n %7D%0A%0Af\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-06-07_17-15-03",
+            "content": "@@ -613,170 +613,8 @@\n %0A%7D%0A%0A\n-func (s *Stack%5BT%5D) Peek() (T, error)%7B%0A%09var nulo T%0A%09if s.Size() == 0 %7B%0A%09%09return nulo, fmt.Errorf(%22tem mais nada%22)%0A%09%7D else %7B%0A%09%09return s.data%5Bs.Size()-1%5D, nil%0A%09%7D%0A%7D%0A%0A\n func\n@@ -1180,16 +1180,19 @@\n op%22:%0A%09%09%09\n+// \n top, err\n@@ -1207,16 +1207,19 @@\n ek()%0A%09%09%09\n+// \n if err !\n@@ -1225,24 +1225,26 @@\n != nil %7B%0A%09%09%09\n+//\n  %09fmt.Printl\n@@ -1253,16 +1253,19 @@\n err)%0A%09%09%09\n+// \n %7D else %7B\n@@ -1268,16 +1268,18 @@\n se %7B%0A%09%09%09\n+//\n  %09fmt.Pr\n@@ -1288,24 +1288,27 @@\n tln(top)%0A%09%09%09\n+// \n %7D%0A%09%09case %22si\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-06-07_17-19-16",
+            "content": "@@ -710,22 +710,21 @@\n rf(%22\n-stack is empty\n+tem mais nada\n %22)%0A%09\n@@ -775,77 +775,8 @@\n %0A%7D%0A%0A\n-func (s *Stack%5BT%5D) Pop() %7B%0A%09var nulo T%0A%09s.data%5Bs.Size()-1%5D = nulo%0A%7D%0A%0A\n func\n@@ -1500,16 +1500,19 @@\n op%22:%0A%09%09%09\n+// \n err := v\n@@ -1517,24 +1517,27 @@\n  v.Pop()%0A%09%09%09\n+// \n if err != ni\n@@ -1535,32 +1535,34 @@\n err != nil %7B%0A%09%09%09\n+//\n  %09fmt.Println(er\n@@ -1563,24 +1563,27 @@\n tln(err)%0A%09%09%09\n+// \n %7D%0A%09%09case %22cl\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-06-07_17-25-19",
+            "content": "@@ -803,62 +803,8 @@\n ) %7B%0A\n-%09if s.Size() == 0 %7B%0A%09%09fmt.Errorf(%22stack is empty%22)%0A%09%7D%0A\n %09var\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-06-07_17-27-12",
+            "content": "@@ -796,22 +796,16 @@\n %5D) Pop()\n- error\n  %7B%0A%09if s\n@@ -821,23 +821,16 @@\n = 0 %7B%0A%09%09\n-return \n fmt.Erro\n@@ -896,20 +896,8 @@\n ulo%0A\n-%09return nil%0A\n %7D%0A%0Af\n",
+            "lines": "116"
+        },
+        {
+            "label": "2026-06-07_17-27-50",
+            "content": "@@ -867,33 +867,35 @@\n y%22)%0A%09%7D%0A%09\n-s.data = \n+var nulo T%0A%09\n s.data%5B\n-:\n s.Size()\n@@ -897,16 +897,23 @@\n ize()-1%5D\n+ = nulo\n %0A%09return\n",
+            "lines": "117"
+        },
+        {
+            "label": "2026-06-07_17-32-28",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n\t\"strconv\"\n)\n\ntype Stack[T any] struct {\n\tdata []T\n}\n\nfunc NewStack[T any](cap int) *Stack[T] {\n\treturn &Stack[T]{\n\t\tdata: make([]T, 0, cap),\n\t}\n}\n\nfunc (s *Stack[T]) String() string {\n\toutput := \"\"\n\tfor i := range cap(s.data) {\n\t\tif i != 0 {\n\t\t\toutput += \", \"\n\t\t}\n\t\tif i < len(s.data) {\n\t\t\toutput += fmt.Sprintf(\"%v\", s.data[i])\n\t\t} else {\n\t\t\toutput += \"_\"\n\t\t}\n\t}\n\treturn output\n}\n\nfunc (s *Stack[T]) Size() int{\n\treturn len(s.data)\n}\n\nfunc (s *Stack[T]) Push(value T) {\n\ts.data = append(s.data, value)\n}\n\nfunc (s *Stack[T]) Clear() {\n\ts.data = s.data[:0]\n}\n\nfunc (s *Stack[T]) Peek() (T, error){\n\tvar nulo T\n\tif s.Size() == 0 {\n\t\treturn nulo, fmt.Errorf(\"stack is empty\")\n\t} else {\n\t\treturn s.data[s.Size()-1], nil\n\t}\n}\n\nfunc (s *Stack[T]) Pop() error {\n\tif s.Size() == 0 {\n\t\treturn fmt.Errorf(\"stack is empty\")\n\t}\n\ts.data = s.data[:s.Size()-1]\n\treturn nil\n}\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tv := NewStack[int](10)\n\tfor {\n\t\tfmt.Print(\"$\")\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline = scanner.Text()\n\t\tfmt.Println(line)\n\t\tparts := strings.Fields(line)\n\t\tif len(parts) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = parts[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tcap, _ := strconv.Atoi(parts[1])\n\t\t\tv = NewStack[int](cap)\n\t\tcase \"push\":\n\t\t\tfor _, part := range parts[1:] {\n\t\t\t \tvalue, _ := strconv.Atoi(part)\n\t\t\t \tv.Push(value)\n\t\t\t}\n\t\tcase \"debug\":\n\t\t\tfmt.Println(v)\n\t\tcase \"top\":\n\t\t\ttop, err := v.Peek()\n\t\t\tif err != nil {\n\t\t\t \tfmt.Println(err)\n\t\t\t} else {\n\t\t\t \tfmt.Println(top)\n\t\t\t}\n\t\tcase \"size\":\n\t\t\tfmt.Println(v.Size())\n\t\tcase \"pop\":\n\t\t\terr := v.Pop()\n\t\t\tif err != nil {\n\t\t\t \tfmt.Println(err)\n\t\t\t}\n\t\tcase \"clear\":\n\t\t\tv.Clear()\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "116"
+        }
+    ]
+}

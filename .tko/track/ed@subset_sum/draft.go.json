@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-07_18-44-50",
+            "content": "@@ -24,156 +24,8 @@\n t%22%0A%0A\n-func backtracking(elem %5B%5Dint, alvo int, soma int) bool%7B%0A    if soma == alvo%7B%0A        return true%0A    %7D%0A    if soma %3C alvo %7B%0A        elem%5B%5D%0A    %7D%0A%7D%0A%0A\n func\n@@ -230,34 +230,22 @@\n     \n-backtracking\n+fmt.Print\n (elem\n-, alvo, 0\n )%0A%7D%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-06-08_14-15-38",
+            "content": "@@ -69,16 +69,8 @@\n oma \n-int, id \n int)\n@@ -76,16 +76,16 @@\n ) bool%7B%0A\n+\n     if s\n@@ -139,14 +139,15 @@\n oma \n-%3E\n+%3C\n  alvo\n+ \n %7B%0A  \n@@ -156,173 +156,14 @@\n     \n-return false%0A    %7D%0A    if backtracking(elem, alvo, soma+elem%5Bid%5D, id+1) %7B%0A        return true%0A    %7D%0A    if backtracking(elem, alvo, soma, id+1) %7B%0A        return true\n+elem%5B%5D\n %0A   \n@@ -378,20 +378,8 @@\n     \n-fmt.Println(\n back\n@@ -403,13 +403,9 @@\n vo, \n-soma)\n+0\n )%0A%7D%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-08_15-00-34",
+            "content": "@@ -581,12 +581,12 @@\n vo, \n-0, 0\n+soma\n ))%0A%7D\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-08_15-00-54",
+            "content": "@@ -331,33 +331,16 @@\n e%0A    %7D%0A\n-    return false%0A\n %7D%0A%0Afunc \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-08_15-01-22",
+            "content": "@@ -557,19 +557,27 @@\n  %7D%0A%0A    \n-if \n+fmt.Println\n (backtra\n@@ -604,85 +604,7 @@\n  0))\n- %7B%0A        fmt.Println(%22true%22)%0A    %7D else %7B%0A        fmt.Println(%22false%22)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-06-08_15-02-20",
+            "content": "@@ -182,59 +182,8 @@\n   %7D%0A\n-    if id == len(elem)%7B%0A        return false%0A    %7D%0A\n     \n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-06-08_15-09-41",
+            "content": "package main\nimport \"fmt\"\n\nfunc backtracking(elem []int, alvo int, soma int, id int) bool{\n    if soma == alvo{\n        return true\n    }\n    if soma > alvo{\n        return false\n    }\n    if id == len(elem){\n        return false\n    }\n    if backtracking(elem, alvo, soma+elem[id], id+1) {\n        return true\n    }\n    if backtracking(elem, alvo, soma, id+1) {\n        return true\n    }\n    return false\n}\n\nfunc main() {\n    var qtd, alvo int\n    fmt.Scan(&qtd, &alvo)\n\n    elem := make([]int, qtd)\n\n    for i := 0; i < qtd; i++ {\n        var valor int\n        fmt.Scan(&valor)\n        elem[i] = valor\n    }\n\n    if (backtracking(elem, alvo, 0, 0)) {\n        fmt.Println(\"true\")\n    } else {\n        fmt.Println(\"false\")\n    }\n}\n",
+            "lines": "40"
+        }
+    ]
+}

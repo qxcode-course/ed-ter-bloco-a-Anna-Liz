@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-10_18-11-11",
+            "content": "@@ -22,254 +22,8 @@\n fmt%22\n-%0A%0Afunc permutacao(primeira string, resto string) %7B%0A    if len(resto) == 0 %7B%0A        return%0A    %7D%0A    for i := 0; i %3C len(resto); i++ %7B%0A        fmt.Print(primeira, resto)%0A        permutacao(primeira+string(resto%5Bi%5D), resto%5B:i%5D+resto%5Bi+1:%5D)%0A    %7D%0A%7D\n %0Afun\n@@ -83,27 +83,25 @@\n ra)%0A\n+%0A\n     \n-permutacao(%22%22, \n+fmt.Println(\n pala\n@@ -109,11 +109,6 @@\n ra)%0A\n-    %0A\n %7D%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-06-10_18-37-16",
+            "content": "@@ -174,10 +174,8 @@\n rint\n-ln\n (pri\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-06-10_18-37-22",
+            "content": "@@ -98,38 +98,8 @@\n 0 %7B%0A\n-        fmt.Println(primeira)%0A\n     \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-06-10_18-43-50",
+            "content": "@@ -183,16 +183,53 @@\n ; i++ %7B%0A\n+        fmt.Println(primeira, resto)%0A\n         \n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-06-10_18-44-35",
+            "content": "package main\nimport \"fmt\"\n\nfunc permutacao(primeira string, resto string) {\n    if len(resto) == 0 {\n        fmt.Println(primeira)\n        return\n    }\n    for i := 0; i < len(resto); i++ {\n        permutacao(primeira+string(resto[i]), resto[:i]+resto[i+1:])\n    }\n}\nfunc main() {\n    var palavra string\n    fmt.Scan(&palavra)\n    permutacao(\"\", palavra)\n    \n}\n",
+            "lines": "18"
+        }
+    ]
+}

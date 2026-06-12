@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-11_15-14-40",
+            "content": "@@ -24,793 +24,8 @@\n t%22%0A%0A\n-%0Afunc backtracking(s %5B%5Dbyte, pos int, n int) bool %7B%0A    if pos == len(s) %7B%0A        return true%0A    %7D%0A    if s%5Bpos%5D != '.' %7B%0A        backtracking(s, pos+1, n)%0A    %7D%0A%0A    for i := 0; i %3C= n; i++ %7B%0A        ok := true%0A%0A        inicio := pos - n%0A        if inicio %3C 0 %7B%0A            inicio = 0%0A        %7D%0A%0A        fim := pos + n%0A        if fim %3E= len(s) %7B%0A            fim = len(s) - 1%0A        %7D%0A%0A        for j := inicio; j %3C= fim; j++ %7B%0A            if j == pos %7B%0A                continue%0A            %7D%0A            if s%5Bj%5D == byte('0'+ i) %7B%0A                ok = false%0A                break%0A            %7D%0A        %7D%0A%0A        if ok %7B%0A            s%5Bpos%5D = byte('0'+ i)%0A%0A            if backtracking(s, pos+1, n) %7B%0A                return true%0A            %7D%0A%0A    %0A        %7D%0A    %7D%0A    return false%0A%7D%0A%0A\n func\n@@ -112,19 +112,19 @@\n     \n-s := %5B%5Dbyte\n+fmt.Println\n (seq\n@@ -139,33 +139,21 @@\n     \n-backtracking(s, 0, n)%0A    \n+fmt.Println(n)\n %0A%7D%0A\n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-06-11_16-39-18",
+            "content": "@@ -945,28 +945,8 @@\n , n)\n-%0A%0A    fmt.Println(s)\n %0A   \n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-06-11_16-39-58",
+            "content": "@@ -964,16 +964,8 @@\n ln(s\n-tring(s)\n )%0A  \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-06-11_16-40-15",
+            "content": "@@ -772,28 +772,8 @@\n     \n-        s%5Bpos%5D = '.'\n %0A   \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-06-11_16-40-51",
+            "content": "@@ -152,23 +152,16 @@\n         \n-return \n backtrac\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-06-11_16-51-25",
+            "content": "package main\nimport \"fmt\"\n\n\nfunc backtracking(s []byte, pos int, n int) bool {\n    if pos == len(s) {\n        return true\n    }\n    if s[pos] != '.' {\n        return backtracking(s, pos+1, n)\n    }\n\n    for i := 0; i <= n; i++ {\n        ok := true\n\n        inicio := pos - n\n        if inicio < 0 {\n            inicio = 0\n        }\n\n        fim := pos + n\n        if fim >= len(s) {\n            fim = len(s) - 1\n        }\n\n        for j := inicio; j <= fim; j++ {\n            if j == pos {\n                continue\n            }\n            if s[j] == byte('0'+ i) {\n                ok = false\n                break\n            }\n        }\n\n        if ok {\n            s[pos] = byte('0'+ i)\n\n            if backtracking(s, pos+1, n) {\n                return true\n            }\n\n            s[pos] = '.'\n        }\n    }\n    return false\n}\n\nfunc main() {\n    var sequencia string\n    var n int\n\n    fmt.Scan(&sequencia, &n)\n\n    s := []byte(sequencia)\n    backtracking(s, 0, n)\n\n    fmt.Println(string(s))\n    \n}\n",
+            "lines": "60"
+        }
+    ]
+}
