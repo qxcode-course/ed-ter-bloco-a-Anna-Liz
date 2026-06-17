@@ -19,21 +19,23 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@basic
-- ed@map_set
-- ed@rec
-- ed@backtrack
-- ed@list
-- ed@linear
+- ed@tree
 - ed@dfs
 - ed@vector
-- ed@tree
+- ed@rec
+- ed@linear
+- ed@backtrack
+- ed@list
+- ed@map_set
+- ed@basic
 flags:
   inbox: all
-  panel: skills
-  show_panel: 'true'
+  panel: graph
   task_graph_mode: executions
   show_time: 'true'
+audit:
+  enabled: true
+  interval_seconds: null
 lang: go
-selected: ed@distancia
-selected_index: 72
+selected: ed@cercado
+selected_index: 92

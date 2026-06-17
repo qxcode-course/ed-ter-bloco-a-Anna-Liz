@@ -1,0 +1,31 @@
+2026-06-16 21:34:55, MOVE, v:1, k:ed@distancia, mode:PICK
+2026-06-16 21:35:03, EXEC, v:1, k:ed@distancia, mode:FULL, rate:100
+2026-06-16 21:35:04, MOVE, v:1, k:ed@distancia, mode:BACK
+2026-06-16 21:37:15, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-06-16 21:37:31, MOVE, v:1, k:ed@sudoku, mode:BACK
+2026-06-16 21:37:33, MOVE, v:1, k:ed@distancia, mode:PICK
+2026-06-16 21:38:11, MOVE, v:1, k:ed@distancia, mode:BACK
+2026-06-16 21:38:14, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-06-16 21:45:15, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 21:52:37, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 21:57:40, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 21:58:18, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:26
+2026-06-16 22:02:29, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 22:03:43, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 22:10:18, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 22:14:53, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 22:27:42, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 22:32:40, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 22:34:03, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 22:42:07, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 22:45:16, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 22:52:42, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 22:53:48, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:104
+2026-06-16 22:54:34, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:105
+2026-06-16 22:55:43, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:107
+2026-06-16 22:57:16, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-16 22:57:52, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:107
+2026-06-16 22:59:21, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:100, size:112
+2026-06-16 22:59:24, MOVE, v:1, k:ed@sudoku, mode:BACK
+2026-06-16 23:00:24, SELF, v:1, k:ed@sudoku, self:1, rate:100, study:70
+2026-06-16 22:59:20, MOVE, v:1, k:ed@sudoku, mode:EDIT
