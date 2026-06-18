@@ -19,23 +19,23 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@tree
 - ed@dfs
-- ed@vector
+- ed@tree
 - ed@rec
-- ed@linear
 - ed@backtrack
+- ed@basic
+- ed@linear
 - ed@list
 - ed@map_set
-- ed@basic
+- ed@vector
 flags:
   inbox: all
-  panel: graph
+  panel: skills
   task_graph_mode: executions
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@cercado
-selected_index: 92
+selected: ed@enesimo
+selected_index: 28
