@@ -1,0 +1,36 @@
+2026-06-25 11:24:37, MOVE, v:1, k:ed@enesimo, mode:DOWN
+2026-06-25 11:24:43, MOVE, v:1, k:ed@enesimo, mode:PICK
+2026-06-25 11:24:37, MOVE, v:1, k:ed@enesimo, mode:EDIT
+2026-06-25 11:24:37, MOVE, v:1, k:ed@enesimo, mode:EDIT
+2026-06-25 11:30:59, MOVE, v:1, k:ed@enesimo, mode:EDIT
+2026-06-25 11:35:32, MOVE, v:1, k:ed@enesimo, mode:EDIT
+2026-06-25 11:46:50, MOVE, v:1, k:ed@enesimo, mode:EDIT
+2026-06-25 11:51:40, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:22
+2026-06-25 11:51:34, MOVE, v:1, k:ed@enesimo, mode:EDIT
+2026-06-25 11:53:42, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:22
+2026-06-25 11:56:52, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:32
+2026-06-25 11:56:50, MOVE, v:1, k:ed@enesimo, mode:EDIT
+2026-06-25 11:57:44, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:100, size:32
+2026-06-25 11:57:47, MOVE, v:1, k:ed@enesimo, mode:BACK
+2026-06-25 11:58:12, SELF, v:1, k:ed@enesimo, self:1, rate:100, study:25, concept:1
+2026-06-25 11:58:38, MOVE, v:1, k:ed@priminhos, mode:DOWN
+2026-06-25 11:58:46, MOVE, v:1, k:ed@priminhos, mode:PICK
+2026-06-25 11:59:23, MOVE, v:1, k:ed@priminhos, mode:BACK
+2026-06-25 11:59:28, MOVE, v:1, k:ed@enesimo, mode:PICK
+2026-06-25 11:58:38, MOVE, v:1, k:ed@priminhos, mode:EDIT
+2026-06-25 12:03:29, MOVE, v:1, k:ed@priminhos, mode:EDIT
+2026-06-25 12:08:19, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:100
+2026-06-25 12:08:14, MOVE, v:1, k:ed@priminhos, mode:EDIT
+2026-06-25 12:08:35, MOVE, v:1, k:ed@enesimo, mode:BACK
+2026-06-25 12:08:55, MOVE, v:1, k:ed@priminhos, mode:PICK
+2026-06-25 12:08:59, EXEC, v:1, k:ed@priminhos, mode:FULL, rate:0, size:37
+2026-06-25 12:09:21, EXEC, v:1, k:ed@priminhos, mode:FULL, rate:0, size:37
+2026-06-25 12:10:35, EXEC, v:1, k:ed@priminhos, mode:FULL, rate:0, size:37
+2026-06-25 12:10:50, EXEC, v:1, k:ed@priminhos, mode:FULL, rate:25, size:37
+2026-06-25 12:13:27, EXEC, v:1, k:ed@priminhos, mode:FULL, size:48, fail:COMP
+2026-06-25 12:13:26, MOVE, v:1, k:ed@priminhos, mode:EDIT
+2026-06-25 12:14:11, EXEC, v:1, k:ed@priminhos, mode:FULL, size:48, fail:COMP
+2026-06-25 12:14:21, EXEC, v:1, k:ed@priminhos, mode:FULL, rate:0, size:47
+2026-06-25 12:14:51, EXEC, v:1, k:ed@priminhos, mode:FULL, rate:100, size:48
+2026-06-25 12:14:53, MOVE, v:1, k:ed@priminhos, mode:BACK
+2026-06-25 12:15:12, SELF, v:1, k:ed@priminhos, self:1, rate:100, study:10

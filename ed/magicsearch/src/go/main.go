@@ -9,7 +9,7 @@ import (
 )
 
 func MagicSearch(slice []int, value int) int {
-	_, _ = slice, value
+	//fiquei doida, ta tarde vou dormir
 	return 0
 }
 

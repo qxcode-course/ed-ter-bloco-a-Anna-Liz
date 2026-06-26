@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-25_12-08-59",
+            "content": "@@ -557,16 +557,18 @@\n mt.Print\n+ln\n (vetor)%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-06-25_12-09-21",
+            "content": "@@ -411,20 +411,10 @@\n    %7D\n- else %7B%0A    \n+%0A%0A\n     \n@@ -442,22 +442,16 @@\n 1, pos)%0A\n-    %7D%0A\n %7D%0A%0Afunc \n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-06-25_12-10-35",
+            "content": "@@ -577,10 +577,8 @@\n rint\n-ln\n (vet\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-06-25_12-10-50",
+            "content": "@@ -10,40 +10,20 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22\n-%0A%09%22go/printer%22%0A)\n %0A%0Afu\n@@ -577,183 +577,16 @@\n rint\n-(%22%5B%22)%0A    for i := 0; i %3C len(vetor); i++ %7B%0A        if i == len(vetor)-1%7B%0A            fmt.Print(vetor%5Bi%5D)%0A        %7D else %7B%0A            fmt.Print(vetor%5Bi%5D, %22,%22) %0A        %7D%0A    %7D\n+ln(vetor)\n %0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-06-25_12-13-27",
+            "content": "@@ -701,13 +701,8 @@\n r%5Bi%5D\n-, %22%5D%22\n )%0A  \n@@ -750,17 +750,16 @@\n r%5Bi%5D, %22,\n- \n %22) %0A    \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-06-25_12-14-11",
+            "content": "@@ -23,16 +23,30 @@\n %0A%09%22fmt%22%0A\n+%09%22go/printer%22%0A\n )%0A%0Afunc \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-06-25_12-14-21",
+            "content": "@@ -683,16 +683,21 @@\n vetor%5Bi%5D\n+, %22%5D%22\n )%0A      \n@@ -766,27 +766,6 @@\n   %7D%0A\n-    fmt.Println(%22%5D%22)%0A\n %7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-06-25_12-14-51",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc primo(n, div int) bool {\n    if n < 2 {\n        return false\n    }\n    if div*div > n {\n        return true\n    }\n    if n % div == 0 {\n        return false\n    }\n    return primo(n, div+1)\n}\n\nfunc nPrimos(vetor []int, atual, pos int) {\n    if pos == len(vetor) {\n        return\n    }\n\n    if primo(atual, 2) {\n        vetor[pos] = atual\n        nPrimos(vetor, atual+1, pos+1)\n    } else {\n        nPrimos(vetor, atual+1, pos)\n    }\n}\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    vetor := make([]int, n)\n    nPrimos(vetor, 2, 0)\n    fmt.Print(\"[\")\n    for i := 0; i < len(vetor); i++ {\n        if i == len(vetor)-1{\n            fmt.Print(vetor[i])\n        } else {\n            fmt.Print(vetor[i], \", \") \n        }\n    }\n    fmt.Println(\"]\")\n}\n",
+            "lines": "48"
+        }
+    ]
+}
