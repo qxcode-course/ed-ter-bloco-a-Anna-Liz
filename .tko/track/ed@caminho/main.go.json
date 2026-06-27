@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_15-36-34",
+            "content": "@@ -1002,34 +1002,8 @@\n rid,\n- caminho, startPos, endPos\n )%0A%7D%0A\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-06-27_15-37-16",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc (p Pos) getNeig() []Pos {\n\treturn []Pos{\n\t\t{p.l + 1, p.c}, \n\t\t{p.l - 1, p.c}, \n\t\t{p.l, p.c + 1}, \n\t\t{p.l, p.c - 1},\n\t}\n}\n\nfunc inside(grid [][]rune, pos Pos) bool {\n\tnrows := len(grid)\n\tncols := len(grid[0])\n\treturn pos.l >= 0 && pos.l < nrows && pos.c >= 0 && pos.c < ncols\n}\n\nfunc match(grid [][]rune, pos Pos, char rune) bool {\n\treturn inside(grid, pos) && grid[pos.l][pos.c] == char\n}\n\nfunc search(grid [][]rune, startPos Pos, endPos Pos) {\n\tfila := NewQueue[Pos]()\n\tvisitados := make(map[Pos]bool)\n\tcaminho := make(map[Pos]Pos)\n\n\tfila.Enqueue(startPos)\n\tvisitados[startPos] = true\n\n\tfor !fila.IsEmpty() {\n\t\tatual, _ := fila.Dequeue()\n\n\t\tif atual == endPos {\n\t\t\tbreak\n\t\t}\n\n\t\tfor _, vizinho := range atual.getNeig() {\n\t\t\tif inside(grid, vizinho) && !visitados[vizinho] && grid[vizinho.l][vizinho.c] != '#' {\n\t\t\t\tvisitados[vizinho] = true\n\t\t\t\tcaminho[vizinho] = atual\n\t\t\t\tfila.Enqueue(vizinho)\n\t\t\t}\n\t\t}\n\t}\n\tvoltar(grid, caminho, startPos, endPos)\n}\n\nfunc voltar(grid [][]rune, caminho map[Pos]Pos, inicio, fim Pos) {\n\tatual := fim\n\tfor atual != inicio {\n\t\tgrid[atual.l][atual.c] = '.'\n\t\tatual = caminho[atual]\n\t}\n\tgrid[inicio.l][inicio.c] = '.'\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tvar nl, nc int\n\tscanner.Scan()\n\tline := scanner.Text()\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\tmat := make([][]rune, nl) // Inicializa a matriz de runes\n\n\t// Carregando matriz\n\tfor i := range nl {\n\t\tscanner.Scan()\n\t\tline := scanner.Text()\n\t\tmat[i] = []rune(line)\n\t}\n\n\tvar inicio, fim Pos\n\n\t// Procurando inicio e fim e colocando ' ' nas posi\u00e7\u00f5es iniciais\n\tfor l := range nl {\n\t\tfor c := range nc {\n\t\t\tif mat[l][c] == 'I' {\n\t\t\t\tmat[l][c] = ' '\n\t\t\t\tinicio = Pos{l, c}\n\t\t\t}\n\t\t\tif mat[l][c] == 'F' {\n\t\t\t\tmat[l][c] = ' '\n\t\t\t\tfim = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tsearch(mat, inicio, fim)\n\n\tfor _, line := range mat {\n\t\tfmt.Println(string(line)) // Converte o slice de runes de volta para string para imprimir\n\t}\n}\n",
+            "lines": "104"
+        }
+    ]
+}

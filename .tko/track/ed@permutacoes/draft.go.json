@@ -22,8 +22,23 @@
         },
         {
             "label": "2026-06-10_18-44-35",
-            "content": "package main\nimport \"fmt\"\n\nfunc permutacao(primeira string, resto string) {\n    if len(resto) == 0 {\n        fmt.Println(primeira)\n        return\n    }\n    for i := 0; i < len(resto); i++ {\n        permutacao(primeira+string(resto[i]), resto[:i]+resto[i+1:])\n    }\n}\nfunc main() {\n    var palavra string\n    fmt.Scan(&palavra)\n    permutacao(\"\", palavra)\n    \n}\n",
+            "content": "@@ -22,22 +22,8 @@\n fmt%22\n-%0Aimport %22sort%22\n %0A%0Afu\n@@ -260,17 +260,16 @@\n     %7D%0A%7D%0A\n-%0A\n func mai\n@@ -323,114 +323,8 @@\n vra)\n-%0A%0A    r := %5B%5Drune(palavra) %0A    sort.Slice(r, func(i, j int) bool %7B%0A        return r%5Bi%5D %3C r%5Bj%5D%0A    %7D)%0A    \n %0A   \n",
             "lines": "18"
+        },
+        {
+            "label": "2026-06-27_18-13-48",
+            "content": "@@ -464,23 +464,16 @@\n %22%22, \n-string(\n palavra)\n )%0A  \n@@ -468,17 +468,16 @@\n palavra)\n-)\n %0A    %0A%7D%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-27_18-16-10",
+            "content": "@@ -467,17 +467,23 @@\n  string(\n-r\n+palavra\n ))%0A    %0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-27_18-17-11",
+            "content": "package main\nimport \"fmt\"\nimport \"sort\"\n\nfunc permutacao(primeira string, resto string) {\n    if len(resto) == 0 {\n        fmt.Println(primeira)\n        return\n    }\n    for i := 0; i < len(resto); i++ {\n        permutacao(primeira+string(resto[i]), resto[:i]+resto[i+1:])\n    }\n}\n\nfunc main() {\n    var palavra string\n    fmt.Scan(&palavra)\n\n    r := []rune(palavra) \n    sort.Slice(r, func(i, j int) bool {\n        return r[i] < r[j]\n    })\n    \n    permutacao(\"\", string(r))\n    \n}\n",
+            "lines": "26"
         }
     ]
 }

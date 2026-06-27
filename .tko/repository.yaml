@@ -19,14 +19,15 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@linear
-- ed@vector
-- ed@basic
-- ed@dfs
 - ed@tree
-- ed@map_set
-- ed@list
+- ed@vector
 - ed@backtrack
+- ed@bfs
+- ed@list
+- ed@linear
+- ed@dfs
+- ed@basic
+- ed@map_set
 - ed@rec
 flags:
   inbox: all
@@ -37,5 +38,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@binomiais
-selected_index: 31
+selected: ed@permutacoes
+selected_index: 74

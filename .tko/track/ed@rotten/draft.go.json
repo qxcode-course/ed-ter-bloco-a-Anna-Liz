@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_16-46-02",
+            "content": "@@ -1425,26 +1425,8 @@\n   %7D%0A\n-        minutos++%0A\n     \n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-06-27_16-48-00",
+            "content": "@@ -908,31 +908,8 @@\n 0 %7B%0A\n-        fmt.Println(0)%0A\n     \n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-06-27_16-54-48",
+            "content": "package main\nimport \"fmt\"\n\ntype Pos struct {\n    l, c int\n}\n\nfunc (p Pos) getNeig() []Pos {\n\treturn []Pos{\n\t\t{p.l + 1, p.c}, \n\t\t{p.l - 1, p.c}, \n\t\t{p.l, p.c + 1}, \n\t\t{p.l, p.c - 1},\n\t}\n}\n\nfunc inside(grid [][]int, pos Pos) bool {\n\tnrows := len(grid)\n\tncols := len(grid[0])\n\treturn pos.l >= 0 && pos.l < nrows && pos.c >= 0 && pos.c < ncols\n}\n\nfunc main() {\n    var m, n int\n    fmt.Scan(&m, &n)\n\n    grid := make([][]int, m)\n    for i := 0; i < m; i++ {\n        grid[i] = make([]int, n)\n\n        for j := 0; j < n; j++ {\n            fmt.Scan(&grid[i][j])\n        }\n    }\n\n    var fila []Pos\n    frescas := 0\n\n    for i := 0; i < m; i++ {\n        for j := 0; j < n; j++ {\n            if grid[i][j] == 2 {\n                fila = append(fila, Pos{i, j})\n            } else {\n                if grid[i][j] == 1 {\n                    frescas++\n                }\n            }\n        }\n    }\n\n\n    if frescas == 0 {\n        fmt.Println(0)\n        return\n    }\n\n    minutos := 0\n\n    for len(fila) > 0 && frescas > 0 {\n        tamanho := len(fila)\n\n        for i := 0; i < tamanho; i++ {\n            atual := fila[0]\n            fila = fila[1:]\n            for _, vizinhos :=  range atual.getNeig() {\n                if inside(grid, vizinhos) && grid[vizinhos.l][vizinhos.c] == 1 {\n                    grid[vizinhos.l][vizinhos.c] = 2\n                    frescas--\n                    fila = append(fila, vizinhos)\n                }\n            }\n        }\n        minutos++\n    }\n\n    if frescas > 0 {\n        fmt.Println(-1)\n    } else {\n        fmt.Println(minutos)\n    }\n}\n",
+            "lines": "81"
+        }
+    ]
+}

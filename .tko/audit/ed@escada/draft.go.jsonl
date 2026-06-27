@@ -1,0 +1,7 @@
+{"ts":1782591408,"hash":"db3b03f6fbe0dc132b6c32a2c7aa83378f95cb6a1a54ff9c1f1243dd3ad41413","mode":"full","content":"H4sIAMAvQGoC/ytITM5OTE9VyE3MzOPKzC3ILypRUErLLVHiSivNSwYLa2gqVHMpAAFQWC+gKDOvJCdPQ8kjNScnX0chPL8oJ0VRSZOrlgsAdYpEcEsAAAA="}
+{"ts":1782591691,"hash":"07498fcc526f3fbe3e4d60179a294089e389cfa0f2a222e29719d7ee5b407d1b","mode":"diff","ops":[{"tag":"replace","a1":3,"a2":4,"text":"    \n"}]}
+{"ts":1782591734,"hash":"a175ac246d2c6084fc1f4f3955e675c0638e8ae8ad3812cac267b392f1a904f9","mode":"diff","ops":[{"tag":"replace","a1":3,"a2":4,"text":"    var n int\n    fmt.Scan(&n)\n"}]}
+{"ts":1782591762,"hash":"21f8af8959f21a4b2ae090ebeb017f807f11a482841107fbe838c6577155a9d6","mode":"diff","ops":[{"tag":"insert","a1":2,"a2":2,"text":"\nfunc degraus(n int) int {\n    \n}\n"}]}
+{"ts":1782592383,"hash":"53a3c8988b5588e2ef1f0c8f810f2492b6967362472c6356facd49d202e47755","mode":"diff","ops":[{"tag":"replace","a1":4,"a2":5,"text":"    if n == 1 {\n        return 1\n    }\n    if n == 2 {\n        return 1\n    }\n    if n == 3 {\n        return 1\n    }\n"}]}
+{"ts":1782592544,"hash":"ad4bf91254a073dbcb20b000c3959797eb17c81bd7951e84d9cba1280fc6afe0","mode":"diff","ops":[{"tag":"replace","a1":11,"a2":12,"text":"        return 2\n"},{"tag":"insert","a1":13,"a2":13,"text":"    return degraus()\n"}]}
+{"ts":1782592579,"hash":"eddc6d02d1d67d1d4c13f57090c13221d9db7d371d546bd1e8d42b064f17c2c0","mode":"diff","ops":[{"tag":"replace","a1":13,"a2":14,"text":"    return degraus(n-1) + degraus(n-3)\n"},{"tag":"insert","a1":18,"a2":18,"text":"    fmt.Println()\n"}]}
